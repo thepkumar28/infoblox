@@ -15,6 +15,6 @@ network_views = conn.get_object('networkview')
 # search network by cidr in specific network view
 network = conn.get_object('network', {'network': '10.166.131.32/27', 'network_view': 'default'})
 print("get all network_views")
-print(network)
-print("search network by cidr in specific network view")
 print(network_views)
+print("search network by cidr in specific network view")
+print(network)
