@@ -8,7 +8,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from infoblox_client import connector, exceptions, objects
 
-opts = {'host': '100.64.1.5', 'username': 'pkumar28', 'password': 'Welcome@2021'}
+opts = {'host': 'ipam.woolworths.com.au', 'username': 'pkumar28', 'password': 'Welcome@2021'}
 conn = connector.Connector(opts)
 # get all network_views
 network_views = conn.get_object('networkview')
