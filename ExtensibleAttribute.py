@@ -62,7 +62,7 @@ print(tmp)
 print("Extensible Attributes")
 extattrs = tmp[1][0]['extattrs']
 print(extattrs)
-#print(tmp[1][0]['extattrs']['Country'])
+print(tmp[1][0]['extattrs']['network'])
 #tmp1 = tmp[1]
 #print(tmp1[0]['extattrs'])
 
