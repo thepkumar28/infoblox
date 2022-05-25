@@ -60,7 +60,7 @@ for v in search_network.values():
 print("Values are : ", tmp)
 print("list size of value is:", len(tmp))
 extattrs = tmp[1][0]['extattrs']
-print("Extensible Attributes", extattrs)
+print("Extensible Attributes : \n", extattrs)
 print("list size of Extensible Attributes is:", len(extattrs))
 #print(tmp[1][0]['network'])
 #tmp1 = tmp[1]
