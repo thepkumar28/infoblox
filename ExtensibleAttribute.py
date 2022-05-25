@@ -63,9 +63,6 @@ extattrs = tmp[1][0]['extattrs']
 print("Extensible Attributes :\n", extattrs)
 print("list size of Extensible Attributes is:", len(extattrs))
 print("Description is :\n", tmp[1][0]['extattrs']['Description']['value'])
-#print(tmp[1][0]['network'])
-#tmp1 = tmp[1]
-#print(tmp1[0]['extattrs'])
 
 #search_host = search_extensible_attribute(connection, "record:host", "Country", "Australia")
 ## Print the output:
