@@ -57,10 +57,10 @@ for v in search_network.values():
     #print("Value : ")
     #print(v)
     tmp += [v]
-print("Values are : ", tmp)
+print("Values are :\n", tmp)
 print("list size of value is:", len(tmp))
 extattrs = tmp[1][0]['extattrs']
-print("Extensible Attributes : \n", extattrs)
+print("Extensible Attributes :\n", extattrs)
 print("list size of Extensible Attributes is:", len(extattrs))
 #print(tmp[1][0]['network'])
 #tmp1 = tmp[1]
