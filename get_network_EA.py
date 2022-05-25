@@ -15,20 +15,19 @@ def default_infoblox_connection():
     return conn
 
 def get_network_EA(connection, place_to_check: str):
-    #args = [
-    #    place_to_check,
-    #    {
-    #        f"*{}:~": value,
-    #    }
-    #]
+    my_args = [
+        place_to_check,
+        {
+            'network': '10.1.1.0/24'
+        }
+    ]
     kwargs = {
         'return_fields': [
             'default',
             'extattrs',
-            'network',
         ]
     }
-    result = {"type": f"{place_to_check}", "objects": connection.get_object(**kwargs, max_results=1)}
+    result = {"type": f"{place_to_check}", "objects": connection.get_object(*my_args, **kwargs, max_results=1)}
     return result
 
 connection = default_infoblox_connection()
