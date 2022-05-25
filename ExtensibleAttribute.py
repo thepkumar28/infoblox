@@ -61,7 +61,7 @@ print("Value : ")
 print(tmp)
 print("Extensible Attributes")
 tmp1 = tmp[1]
-print(tmp1[1])
+print(tmp1[0]['extattrs'])
 
 #search_host = search_extensible_attribute(connection, "record:host", "Country", "Australia")
 ## Print the output:
