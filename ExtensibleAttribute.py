@@ -51,11 +51,11 @@ print("Below is the Search Network :")
 #for k in search_network.keys():
 #    print("Key : ")
 #    print(k)
+tmp = []
 for v in search_network.values():    
     #print("Value : ")
     #print(v)
-    tmp = []
-tmp = v
+    tmp += [v]
 print("Value : ")
 print(tmp)
 #search_host = search_extensible_attribute(connection, "record:host", "Country", "Australia")
