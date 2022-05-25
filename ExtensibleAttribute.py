@@ -55,7 +55,7 @@ for v in search_network.values():
     #print("Value : ")
     #print(v)
     tmp = []
-    tmp = v
+tmp = v
 print("Value : ")
 print(tmp)
 #search_host = search_extensible_attribute(connection, "record:host", "Country", "Australia")
