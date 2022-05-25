@@ -59,7 +59,7 @@ for v in search_network.values():
 print("Value : ")
 print(tmp)
 print("Extensible Attributes")
-print(tmp[1][2])
+print(tmp[1])
 #search_host = search_extensible_attribute(connection, "record:host", "Country", "Australia")
 ## Print the output:
 #print("Below is the Search Host :")
