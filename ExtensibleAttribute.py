@@ -52,7 +52,7 @@ print("Below is the Search Network :")
 #    print("Key : ")
 #    print(k)
 tmp = []
-tmp1 = []
+extattrs = []
 for v in search_network.values():    
     #print("Value : ")
     #print(v)
@@ -60,7 +60,9 @@ for v in search_network.values():
 print("Value : ")
 print(tmp)
 print("Extensible Attributes")
-print(tmp[1][0]['extattrs']['Country'])
+extattrs = tmp[1][0]['extattrs']
+print(extattrs)
+#print(tmp[1][0]['extattrs']['Country'])
 #tmp1 = tmp[1]
 #print(tmp1[0]['extattrs'])
 
