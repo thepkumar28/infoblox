@@ -20,7 +20,7 @@ def get_network_EA(connection, place_to_check: str):
     my_args = [
         place_to_check,
         {
-            'network': '10.1.0.0/16'
+            'net': '10.1.0.0/16'
         }
     ]
     kwargs = {
