@@ -1,5 +1,7 @@
 #! /usr/bin/python3
 
+import sys
+
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -8,7 +10,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from infoblox_client import connector, exceptions, objects
 
-opts = {'host': 'ipam.woolworths.com.au', 'username': 'pkumar28', 'password': 'Welcome@2021'}
+opts = {'host': 'ipam.woolworths.com.au', 'username': sys.argv[1], 'password': sys.argv[2]}
 conn = connector.Connector(opts)
 # get all network_views
 network_views = conn.get_object('networkview')
