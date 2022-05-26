@@ -1,5 +1,7 @@
 #! /usr/bin/python3
 
+import sys
+
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -10,7 +12,8 @@ from infoblox_client.connector import Connector
 
 
 def default_infoblox_connection():
-    opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': 'pkumar28', 'password': 'Welcome@2021'}
+    #opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': 'pkumar28', 'password': 'Welcome@2021'}
+    opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': 'sys.argv[1]', 'password': 'sys.argv[1]'}
     conn = Connector(opts)
     return conn
 
@@ -18,7 +21,7 @@ def get_network_EA(connection, place_to_check: str):
     my_args = [
         place_to_check,
         {
-            'network': '10.1.0.0/16'
+            'network': '10.1.1.0/24'
         }
     ]
     kwargs = {
