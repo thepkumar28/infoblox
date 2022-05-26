@@ -12,7 +12,6 @@ from infoblox_client.connector import Connector
 
 
 def default_infoblox_connection():
-    #opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': 'pkumar28', 'password': 'Welcome@2021'}
     opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
     conn = Connector(opts)
     return conn
