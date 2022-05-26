@@ -16,7 +16,7 @@ def default_infoblox_connection():
     conn = Connector(opts)
     return conn
 
-def get_network_EA(connection, place_to_check: str, network_container: str):
+def get_network_container_values(connection, place_to_check: str, network_container: str):
     my_args = [
         place_to_check,
         {
@@ -29,13 +29,12 @@ def get_network_EA(connection, place_to_check: str, network_container: str):
             'extattrs',
         ]
     }
-    #result = {"type": f"{place_to_check}", "objects": connection.get_object(*my_args, **kwargs)}
     result = connection.get_object(*my_args, **kwargs)
     return result
 
 connection = default_infoblox_connection()
 
-get_EA = get_network_EA(connection, "networkcontainer", "10.1.0.0/16")
+get_NC_values = get_network_container_values(connection, "networkcontainer", "10.1.0.0/16")
 
-print("Below is the Extensible Attribute :")
-print(get_EA)
+print("Below is the Network Container Values :")
+print(get_NC_values)
