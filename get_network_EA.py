@@ -16,11 +16,11 @@ def default_infoblox_connection():
     conn = Connector(opts)
     return conn
 
-def get_network_EA(connection, place_to_check: str):
+def get_network_EA(connection, place_to_check: str, network_container: str):
     my_args = [
         place_to_check,
         {
-            'network': '10.1.0.0/16'
+            'network': network_container
         }
     ]
     kwargs = {
@@ -35,7 +35,7 @@ def get_network_EA(connection, place_to_check: str):
 
 connection = default_infoblox_connection()
 
-search_network = get_network_EA(connection, "networkcontainer")
+get_EA = get_network_EA(connection, "networkcontainer", "10.1.0.0/16")
 
-print("Below is the Search Network :")
-print(search_network)
+print("Below is the Extensible Attribute :")
+print(get_EA)
