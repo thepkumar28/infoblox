@@ -36,6 +36,4 @@ connection = default_infoblox_connection()
 
 get_NC_values = get_network_container_values(connection, "networkcontainer", "10.1.0.0/16")
 
-print("Below is the Network Container Values :")
-print(get_NC_values)
-print("Size of the list is :\n" , len(get_NC_values))
+print("Below is the Network Container Values :\n" , get_NC_values)
