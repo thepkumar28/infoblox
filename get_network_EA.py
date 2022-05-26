@@ -27,7 +27,8 @@ def get_network_EA(connection, place_to_check: str):
             'extattrs',
         ]
     }
-    result = {"type": f"{place_to_check}", "objects": connection.get_object(*my_args, **kwargs)}
+    #result = {"type": f"{place_to_check}", "objects": connection.get_object(*my_args, **kwargs)}
+    result = {"objects": connection.get_object(*my_args, **kwargs)}
     return result
 
 connection = default_infoblox_connection()
