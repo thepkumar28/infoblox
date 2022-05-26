@@ -20,7 +20,7 @@ def get_network_EA(connection, place_to_check: str):
     my_args = [
         place_to_check,
         {
-            'network': '10.1.1.0/24'
+            'network': '10.1.0.0/16'
         }
     ]
     kwargs = {
@@ -35,7 +35,7 @@ def get_network_EA(connection, place_to_check: str):
 
 connection = default_infoblox_connection()
 
-search_network = get_network_EA(connection, "network")
+search_network = get_network_EA(connection, "networkcontainer")
 
 print("Below is the Search Network :")
 print(search_network)
