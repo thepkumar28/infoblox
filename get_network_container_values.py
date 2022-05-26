@@ -38,3 +38,4 @@ get_NC_values = get_network_container_values(connection, "networkcontainer", "10
 
 print("Below is the Network Container Values :")
 print(get_NC_values)
+print("Size of the list is :\n" , len(get_NC_values))
