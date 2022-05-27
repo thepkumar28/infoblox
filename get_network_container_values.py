@@ -27,7 +27,7 @@ def get_network_container_values(connection, place_to_check: str, network_contai
         'return_fields': [
             'default',
             'extattrs',
-            'network_container',
+            'network',
         ]
     }
     result = connection.get_object(*my_args, **kwargs)
