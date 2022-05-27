@@ -36,4 +36,4 @@ connection = default_infoblox_connection()
 
 get_Network_values = get_network_values(connection, "network", "131.226.192.0/18")
 
-print("Below is the Network Container Values :\n" , get_Network_values)
+print("Below is the Network Values :\n" , get_Network_values)
