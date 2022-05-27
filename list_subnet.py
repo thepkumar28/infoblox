@@ -35,6 +35,6 @@ def list_network_container_subnet(connection, place_to_check: str, network_conta
 
 connection = default_infoblox_connection()
 
-list_NC_subnet = list_network_container_subnet(connection, "network", "10.0.0.0/24")
+list_NC_subnet = list_network_container_subnet(connection, "network", "131.226.192.0/18")
 
 print("Below is the subnet list :\n" , list_NC_subnet)
