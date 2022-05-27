@@ -27,7 +27,6 @@ def get_network_container_values(connection, place_to_check: str, network_contai
         'return_fields': [
             'default',
             'extattrs',
-            #'network_container',
         ]
     }
     result = connection.get_object(*my_args, **kwargs)
@@ -35,6 +34,6 @@ def get_network_container_values(connection, place_to_check: str, network_contai
 
 connection = default_infoblox_connection()
 
-get_NC_values = get_network_container_values(connection, "network_container", "131.226.192.0/18")
+get_NC_values = get_network_container_values(connection, "networkcontainer", "131.226.192.0/18")
 
 print("Below is the Network Container Values :\n" , get_NC_values)
