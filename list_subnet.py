@@ -16,7 +16,7 @@ def default_infoblox_connection():
     conn = Connector(opts)
     return conn
 
-def list_network(connection, place_to_check: str, network_container):
+def list_network_container_subnet(connection, place_to_check: str, network_container):
     my_args = [
         place_to_check,
         {
@@ -26,7 +26,8 @@ def list_network(connection, place_to_check: str, network_container):
     kwargs = {
         'return_fields': [
             'default',
-            #'network_container',
+            'extattrs',
+            'network_container',
         ]
     }
     result = connection.get_object(*my_args, **kwargs)
@@ -34,6 +35,6 @@ def list_network(connection, place_to_check: str, network_container):
 
 connection = default_infoblox_connection()
 
-list_NC_network = list_network(connection, "network", "10.0.0.0/24")
+list_NC_subnet = list_network_container_subnet(connection, "network", "10.0.0.0/24")
 
-print("Below is the network list :\n" , list_NC_network)
+print("Below is the network list :\n" , list_NC_subnet)
