@@ -20,7 +20,7 @@ def list_network(connection, place_to_check: str):
     my_args = [
         place_to_check,
         {
-            #'network': network
+            'network'
         }
     ]
     kwargs = {
