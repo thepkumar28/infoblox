@@ -37,4 +37,4 @@ connection = default_infoblox_connection()
 
 list_NC_subnet = list_network_container_subnet(connection, "network", "10.0.0.0/24")
 
-print("Below is the network list :\n" , list_NC_subnet)
+print("Below is the subnet list :\n" , list_NC_subnet)
