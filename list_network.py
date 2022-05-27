@@ -26,7 +26,7 @@ def list_network(connection, place_to_check: str, network_container):
     kwargs = {
         'return_fields': [
             'default',
-            #'network_container',
+            'network_container',
         ]
     }
     result = connection.get_object(*my_args, **kwargs)
