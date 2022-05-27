@@ -34,6 +34,6 @@ def list_network(connection, place_to_check: str, network_container):
 
 connection = default_infoblox_connection()
 
-list_NC_network = list_network(connection, "network", "131.226.192.0/18")
+list_NC_network = list_network(connection, "network", "10.0.0.0/16")
 
 print("Below is the network list :\n" , list_NC_network)
