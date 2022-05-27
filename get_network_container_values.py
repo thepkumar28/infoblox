@@ -34,6 +34,6 @@ def get_network_container_values(connection, place_to_check: str, network_contai
 
 connection = default_infoblox_connection()
 
-get_NC_values = get_network_container_values(connection, "networkcontainer", "10.1.0.0/16")
+get_NC_values = get_network_container_values(connection, "networkcontainer", "131.226.192.0/18")
 
 print("Below is the Network Container Values :\n" , get_NC_values)
