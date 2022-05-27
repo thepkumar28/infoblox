@@ -34,6 +34,6 @@ def get_network_values(connection, place_to_check: str, network: str):
 
 connection = default_infoblox_connection()
 
-get_Network_values = get_network_values(connection, "network", "131.226.192.0/18")
+get_Network_values = get_network_values(connection, "network", "131.226.217.128/27")
 
 print("Below is the Network Values :\n" , get_Network_values)
