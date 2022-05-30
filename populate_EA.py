@@ -16,26 +16,6 @@ def default_infoblox_connection():
     conn = Connector(opts)
     return conn
 
-def populate_ExtensibleAttribute_values(connection, place_to_check: str, network_container: str):
-    my_args = [
-        place_to_check,
-        {
-            'network': network_container
-        }
-    ]
-    kwargs = {
-        'extattrs+': {
-            "Description": {
-                "value": "This is my test description"
-            }
-        }
-    }
-
-    result = connection.set_object(*my_args, **kwargs)
-    return result
-
 connection = default_infoblox_connection()
-
-populate_EA_values = populate_ExtensibleAttribute_values(connection, "networkcontainer", "131.226.192.0/18")
-
-print("Below are the Network Container Values :\n" , populate_EA_values)
+ea = objects.EA({'Description': 'This is my test description'})
+update_network_options(connection, "131.226.192.0/18", ea)
