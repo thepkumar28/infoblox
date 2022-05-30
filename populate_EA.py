@@ -10,6 +10,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from infoblox_client.connector import Connector
 from infoblox_client import objects
+from infoblox_client import object_manager
 from infoblox_client.object_manager import InfobloxObjectManager
 
 def default_infoblox_connection():
@@ -18,7 +19,9 @@ def default_infoblox_connection():
     return conn
 
 connection = default_infoblox_connection()
-extattrs = objects.EA({'Description': 'This is my test description'})
-populate_EA_values = InfobloxObjectManager.update_network_options(connection, "131.226.192.0/18", extattrs)
+network = objects.Network.search(connection, network='131.226.192.0/18', network_view='default', return_fields=['network', 'extattrs'])
+ea = objects.EA({'Description': 'This is my test description'})
+network.extattrs = ea
+populate_EA_values = InfobloxObjectManager.update_network_options("131.226.192.0/18", network.extattrs)
 
 print("Below are the Network Container Values :\n" , populate_EA_values)
