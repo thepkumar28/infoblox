@@ -10,7 +10,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from infoblox_client.connector import Connector
 from infoblox_client import objects
-from infoblox_client.object_manager import update_network_options
+from infoblox_client.object_manager import InfobloxObjectManager
 
 def default_infoblox_connection():
     opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
@@ -19,6 +19,6 @@ def default_infoblox_connection():
 
 connection = default_infoblox_connection()
 ea = objects.EA({'Description': 'This is my test description'})
-populate_EA_values = update_network_options(connection, "131.226.192.0/18", ea)
+populate_EA_values = InfobloxObjectManager.update_network_options(connection, "131.226.192.0/18", ea)
 
 print("Below are the Network Container Values :\n" , populate_EA_values)
