@@ -19,7 +19,7 @@ def default_infoblox_connection():
 def populate_ExtensibleAttribute_values(ib_network=str):
 
     ea = objects.EA({'Description': 'This is a test'})
-    result = ib_network.update(ib_network , ea)
+    result = objects.Network.update(ib_network , ea)
     return result
 
 connection = default_infoblox_connection()
