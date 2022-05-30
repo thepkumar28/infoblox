@@ -31,7 +31,7 @@ def populate_ExtensibleAttribute_values(connection, place_to_check: str, network
         }
     }
 
-    result = connection.put_object(*my_args, **kwargs)
+    result = connection.set_object(*my_args, **kwargs)
     return result
 
 connection = default_infoblox_connection()
