@@ -19,7 +19,7 @@ def default_infoblox_connection():
     return conn
 
 connection = default_infoblox_connection()
-ib_network = objects.Network.search(connection, network='131.226.192.0/18', network_view='default', return_fields=['network', 'extattrs'])
+ib_network = objects.Network.search(connection, networkcontainer='131.226.192.0/18', network_view='default', return_fields=['network', 'extattrs'])
 ea = objects.EA({'Description': 'This is my test description'})
 
 print("ib_network :\n", ib_network)
