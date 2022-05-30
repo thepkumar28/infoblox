@@ -21,8 +21,10 @@ def default_infoblox_connection():
 connection = default_infoblox_connection()
 ib_network = objects.Network.search(connection, network='131.226.192.0/18', network_view='default', return_fields=['network', 'extattrs'])
 ea = objects.EA({'Description': 'This is my test description'})
-ib_network.extattrs = ea
+
+print("EA :\n", ea)
+#ib_network.extattrs = ea
 #network.update()
-populate_EA_values = InfobloxObjectManager.update_network_options("131.226.192.0/18", ib_network.extattrs)
+#populate_EA_values = InfobloxObjectManager.update_network_options("131.226.192.0/18", ib_network.extattrs)
 
 #print("Below are the Network Container Values :\n" , populate_EA_values)
