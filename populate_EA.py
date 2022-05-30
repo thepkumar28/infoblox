@@ -23,8 +23,8 @@ ea = objects.EA({'Description': 'This is my test description'})
 
 print("ib_network :\n", ib_network)
 print("EA :\n", ea)
-#ib_network.extattrs = ea
-#network.update()
+ib_network.extattrs = ea
+ib_network.update()
 #populate_EA_values = InfobloxObjectManager.update_network_options("131.226.192.0/18", ib_network.extattrs)
 
 #print("Below are the Network Container Values :\n" , populate_EA_values)
