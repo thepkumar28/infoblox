@@ -10,7 +10,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from infoblox_client.connector import Connector
 from infoblox_client import objects
-from infoblox_client.object_manager import *
+from infoblox_client.object_manager import update_network_options
 
 def default_infoblox_connection():
     opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
