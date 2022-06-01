@@ -19,10 +19,10 @@ connection = default_infoblox_connection()
 
 def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
     network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    ea = objects.EA({exatt})
+    ea = objects.EA(exatt)
     return ea
 
-populate_Network_EA = populate_Network_ExtensibleAttribute('131.226.217.128/27','Description': 'This is my updated test description...')
+populate_Network_EA = populate_Network_ExtensibleAttribute('131.226.217.128/27',{'Description': 'This is my updated test description...'})
 
 print("Populated Extensible Attribute for the Network is :\n" , populate_Network_EA)
 
