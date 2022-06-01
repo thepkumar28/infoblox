@@ -17,7 +17,7 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
+def populate_Network_ExtensibleAttribute(nw=str, exatt):
     network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     ea = objects.EA(exatt)
     return ea
