@@ -37,3 +37,4 @@ connection = default_infoblox_connection()
 get_NC_values = get_network_container_values(connection, "networkcontainer", "131.226.192.0/18")
 
 print("Below are the Network Container Values :\n" , get_NC_values)
+print(type(get_NC_values))
