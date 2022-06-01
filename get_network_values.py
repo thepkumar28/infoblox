@@ -37,3 +37,5 @@ connection = default_infoblox_connection()
 get_Network_values = get_network_values(connection, "network", "131.226.217.128/27")
 
 print("Below are the Network Values :\n" , get_Network_values)
+
+print(type(get_Network_values))
