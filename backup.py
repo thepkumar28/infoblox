@@ -17,9 +17,11 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def backup_Network_data(nw=str):
-    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    return ib_network
-
-backedup_Network_data = backup_Network_data('131.226.217.143')
-print(backedup_Network_data)
+ib_network = objects.Network.search(connection, network='131.226.217.128/27', network_view='default', return_fields=['default', 'extattrs'])
+#def backup_Network_data(nw=str):
+#    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
+#    return ib_network
+#
+#backedup_Network_data = backup_Network_data('131.226.217.128/27')
+#print(backedup_Network_data)
+print(ib_network)
