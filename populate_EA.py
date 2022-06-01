@@ -38,17 +38,3 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, exatt=str):
 populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test description'})
 
 print("Populated Extensible Attribute for the Network Container is :\n" , populate_NetworkContainer_EA)
-
-#ib_network = objects.Network.search(connection, network='131.226.217.128/27', network_view='default', return_fields=['default', 'extattrs'])
-#ib_network_container = objects.NetworkContainer.search(connection, network='131.226.192.0/18', network_view='default', return_fields=['default', 'extattrs'])
-#ea = objects.EA({'Description': 'This is my test description...'})
-#ea_nc = objects.EA({'Description': 'This is my test Container description...'})
-#print("ib_network :\n", ib_network)
-#print("ib_network_container :\n", ib_network_container)
-#print("EA :\n", ea)
-#ib_network.extattrs = ea
-#ib_network_update=ib_network.update()
-#ib_network_container.extattrs = ea_nc
-#ib_network_container_update=ib_network_container.update()
-#print("Updated Extensible Attribute for Network is :\n", ib_network_update)
-#print("Updated Extensible Attribute for Network Container is :\n", ib_network_container_update)
