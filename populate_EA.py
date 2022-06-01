@@ -35,7 +35,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, exatt=str):
     ib_network_container_update=ib_network_container.update()
     return ib_network_container_update
 
-populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test description', 'Request Number': 'CHG00197378'})
+populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test description'})
 
 print("Populated Extensible Attribute for the Network Container is :\n" , populate_NetworkContainer_EA)
 
