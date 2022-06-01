@@ -22,7 +22,7 @@ def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
     ea = objects.EA({exatt})
     return ea
 
-populate_Network_EA = populate_Network_ExtensibleAttribute('131.226.217.128/27',"'Description': 'This is my updated test description...'")
+populate_Network_EA = populate_Network_ExtensibleAttribute('131.226.217.128/27','Description': 'This is my updated test description...')
 
 print("Populated Extensible Attribute for the Network is :\n" , populate_Network_EA)
 
