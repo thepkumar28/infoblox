@@ -19,7 +19,7 @@ connection = default_infoblox_connection()
 
 def backup_Network_data(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    with open('backup_Network_data.csv', 'a') as f:
+    with open('backup_Network_data.txt', 'a') as f:
         f.write(str(ib_network) + '\n')
     return ib_network
 
@@ -28,7 +28,7 @@ print("Backedup Network data")
 
 def backup_NetworkContainer_data(nw=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    with open('backup_NetworkContainer_data.csv', 'a') as f:
+    with open('backup_NetworkContainer_data.txt', 'a') as f:
         f.write(str(ib_network_container) + '\n')
     return ib_network_container
 
