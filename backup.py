@@ -18,6 +18,7 @@ def default_infoblox_connection():
 connection = default_infoblox_connection()
 
 ib_network = objects.Network.search(connection, network='131.226.217.128/27', network_view='default', return_fields=['default', 'extattrs'])
+ib_network > backup.txt
 #def backup_Network_data(nw=str):
 #    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
 #    return ib_network
