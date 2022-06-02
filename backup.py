@@ -30,5 +30,5 @@ print(backedup_Network_data)
 #with open('backup.txt', 'w') as f:
 #    f.write(str(ib_network) + '\n')
 
-print(ib_network)
-print(type(ib_network))
+#print(ib_network)
+#print(type(ib_network))
