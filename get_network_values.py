@@ -15,6 +15,7 @@ def default_infoblox_connection():
     opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
     conn = Connector(opts)
     return conn
+connection = default_infoblox_connection()
 
 def get_network_values(connection, place_to_check: str, network: str):
     my_args = [
@@ -31,8 +32,6 @@ def get_network_values(connection, place_to_check: str, network: str):
     }
     result = connection.get_object(*my_args, **kwargs)
     return result
-
-connection = default_infoblox_connection()
 
 get_Network_values = get_network_values(connection, "network", "131.226.217.128/27")
 

@@ -15,6 +15,7 @@ def default_infoblox_connection():
     opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
     conn = Connector(opts)
     return conn
+connection = default_infoblox_connection()
 
 def search_extensible_attribute(connection, place_to_check: str, extensible_attribute: str, value: str):
     """
@@ -40,8 +41,6 @@ def search_extensible_attribute(connection, place_to_check: str, extensible_attr
     }
     result = {"type": f"{place_to_check}", "objects": connection.get_object(*extensible_args, **kwargs, max_results=1)}
     return result
-
-connection = default_infoblox_connection()
 
 search_network = search_extensible_attribute(connection, "network", "Country", "Australia")
 # Print the output:
