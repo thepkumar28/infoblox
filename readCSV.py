@@ -9,7 +9,7 @@ with open('NetworkContainer_EA.csv') as csv_file:
         if line_count1 == 0:
             #print(f'{", ".join(row)}')
             print(row[0])
-            line_count += 1
+            line_count1 += 1
         else:
             #print(f'{", ".join(row)}')
             print(row[0])
