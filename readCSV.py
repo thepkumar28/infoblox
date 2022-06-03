@@ -3,9 +3,10 @@
 import csv
 
 with open('NetworkContainer_EA.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    for row , col in csv_file:
-        print(col[0])
+    csv_reader = csv.DictReader(csv_file, delimiter=':')
+    for lines in csv_reader:
+        print(lines)
+
 
 #with open('NetworkContainer_EA.csv') as csv_file:
 #    csv_reader = csv.reader(csv_file, delimiter=',')
