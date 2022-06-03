@@ -5,7 +5,7 @@ import csv
 result = {}
 
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
+    csv_reader = csv.reader(csv_file)
     for col in csv_reader:
         print (col)
 
