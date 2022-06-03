@@ -2,16 +2,10 @@
 
 import csv
 
-result = {}
-
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
-    csv_reader = csv.reader(csv_file)
+    csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
-        #print (row)
-        for i in row:
-            #result[row[0]] = row[i]
-            #print(i)
-            print(row[i])
+        print(dict(row))
 
         #for row in col:
         #    #result[col[0]] = row[0]
