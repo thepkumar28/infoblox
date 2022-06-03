@@ -10,7 +10,8 @@ with open('NetworkContainer_EA.csv', newline='') as csv_file:
         #print (row)
         for i in row:
             #result[row[0]] = row[i]
-            print(i)
+            #print(i)
+            print(i[0])
 
         #for row in col:
         #    #result[col[0]] = row[0]
