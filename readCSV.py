@@ -10,10 +10,10 @@ with open('NetworkContainer_EA.csv', newline='') as csv_file:
         #print (col)
 
         for row in col:
-
+            result[col[0]] = row[0]
             #result[row['Network Container']] = row['Description']
-            #print (result)
-            print (row)
+            print (result)
+            #print (row)
 
 
 
