@@ -5,17 +5,9 @@ import csv
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
-        result = (dict(row))
-        print(result)
-
-        #for row in col:
-        #    #result[col[0]] = row[0]
-        #    #result[row['Network Container']] = row['Description']
-        #    #print (result)
-        #    #print (row)
-
-
-
+        tmp = (dict(row))
+        del tmp["Network Container"]
+        print(tmp)
 
 #with open('NetworkContainer_EA.csv') as csv_file:
 #    csv_reader = csv.reader(csv_file, delimiter=',')
