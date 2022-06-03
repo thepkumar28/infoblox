@@ -6,9 +6,12 @@ result = {}
 
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        result[row['Network Container']] = row['Description']
-        print (result)
+    for col in csv_reader:
+        for row in col:
+
+            #result[row['Network Container']] = row['Description']
+            #print (result)
+            print (row)
 
 
 
