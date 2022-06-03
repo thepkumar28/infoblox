@@ -2,10 +2,14 @@
 
 import csv
 
+result = {}
+
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
-    csv_reader = csv.reader(csv_file)
-    result = dict(csv_reader)
-    print (result)
+    csv_reader = csv.DictReader(csv_file)
+    for row in csv_reader:
+        result[row['Network Container']] = row['Description']
+        print (result)
+
 
 
 
