@@ -6,8 +6,9 @@ result = {}
 
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
     csv_reader = csv.reader(csv_file)
-    for rows in csv_reader:
+    for rows , col in csv_reader:
         print (rows)
+        print (col)
 
         #for row in col:
         #    #result[col[0]] = row[0]
