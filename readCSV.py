@@ -3,7 +3,7 @@
 import csv
 
 with open('NetworkContainer_EA.csv') as csv_file:
-    csv_reader = csv.DictReader(csv_file, delimiter=':')
+    csv_reader = csv.DictReader(csv_file)
     for lines in csv_reader:
         print(lines)
 
