@@ -6,7 +6,6 @@ with open('NetworkContainer_EA.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for row , col in csv_file:
         print(col[0])
-        print(row[0])
 
 #with open('NetworkContainer_EA.csv') as csv_file:
 #    csv_reader = csv.reader(csv_file, delimiter=',')
