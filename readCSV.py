@@ -2,7 +2,7 @@
 
 import csv
 
-with open('NetworkContainer_EA.csv') as csv_file:
+with open('NetworkContainer_EA.csv', newline='') as csv_file:
     csv_reader = csv.reader(csv_file)
     result = dict(csv_reader)
     print (result)
