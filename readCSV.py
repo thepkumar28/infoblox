@@ -5,7 +5,8 @@ import csv
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
-        print(dict(row[1]))
+        result = (dict(row))
+        print(result)
 
         #for row in col:
         #    #result[col[0]] = row[0]
