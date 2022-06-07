@@ -23,14 +23,19 @@ def backup_Network_data(nw=str):
         f.write(str(ib_network) + '\n')
     return ib_network
 
-#backup_Network_data('131.226.217.128/27')
-#print("Backedup Network data")
-
 def backup_NetworkContainer_data(nw=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     with open('backup_NetworkContainer_data.txt', 'a') as f:
         f.write(str(ib_network_container) + '\n')
     return ib_network_container
+
+with open('Network_EA.csv', newline='') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    for row in csv_reader:
+        tmp = (dict(row))
+        NW = tmp["Network Container"]
+        print (NW)
+        backup_Network_data(NW)
 
 with open('NetworkContainer_EA.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -39,5 +44,3 @@ with open('NetworkContainer_EA.csv', newline='') as csv_file:
         NC = tmp["Network Container"]
         print (NC)
         backup_NetworkContainer_data(NC)
-#backup_NetworkContainer_data('131.226.192.0/18')
-#print("Backedup NetworkContainet data")
