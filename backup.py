@@ -33,7 +33,7 @@ with open('Network_EA.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
-        NW = tmp["Network Container"]
+        NW = tmp["Network"]
         print (NW)
         backup_Network_data(NW)
 
