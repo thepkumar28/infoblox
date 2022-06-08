@@ -25,7 +25,7 @@ def convert_NetworkContainer_data_to_dict(nw=str):
     result = dict((a.strip(), b.strip())  
                      for a, b in (element.split('=')  
                                   for element in Ea.split(',')))
-    return comment, result
+    return result
  
 def convert_Network_data_to_dict(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
