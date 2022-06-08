@@ -19,6 +19,7 @@ connection = default_infoblox_connection()
 def convert_Network_data_to_dict(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     comment = ib_network.comment
+    Ea = []
     Ea = ib_network.extattrs
     for item in Ea:
         print(item)
