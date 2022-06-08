@@ -19,18 +19,19 @@ connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    #if ib_network_container.comment == " ":
-    #    print('The comment field is Null')
-    #else:
-    #    print(ib_network_container.comment)    
-    ib_network_container.comment = comm
-    ea = objects.EA(exatt)
-    ib_network_container.extattrs = ea
-    ib_network_container.update()
+    if ib_network_container.comment == " ":
+        ib_network_container.comment = comm
+        print('The comment field is Null')
+    else:
+        print('Comment is :', ib_network_container.comment)    
+    #ib_network_container.comment = comm
+    #ea = objects.EA(exatt)
+    #ib_network_container.extattrs = ea
+    #ib_network_container.update()
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
-    return ib_network_container
-populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', '', {'Description': 'This is my test container description', 'Environment': 'Test'})
+    #return ib_network_container
+populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
 
 #populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test container description'})
 
