@@ -26,7 +26,7 @@ def populate_Network_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     #ib_network_update=ib_network.update()
     #return ib_network_update
 
-populate_Network_ExtensibleAttribute('131.226.217.128/27', 'Cisco DevNet Sandbox Range...', {'Description': 'This is my test description', 'Environment': 'Test'})
+populate_Network_ExtensibleAttribute('131.226.217.128/27', 'Cisco DevNet Sandbox Range...', {'Description': 'This is my test network description', 'Environment': 'Test'})
 
 #populate_Network_EA = populate_Network_ExtensibleAttribute('131.226.217.128/27','Dev Network Used for testing scripts as part of the IPAM Project'{'Description': 'This is my test description', 'Request Number': 'CHG00197378'})
 
