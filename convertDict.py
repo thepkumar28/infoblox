@@ -36,10 +36,10 @@ def convert_Network_data_to_dict(nw=str):
     EA_dict_N = dict((a.strip(), b.strip())  
                      for a, b in (element.split('=')  
                                   for element in EA_N.split(',')))
-    return EA_dict_N
+    return EA_dict_N , comment
 
 converted_NetworkContainer_data = convert_NetworkContainer_data_to_dict('131.226.192.0/18') 
 converted_Network_data = convert_Network_data_to_dict('131.226.217.128/27')  
 
-print('Network Container EA :\n', converted_NetworkContainer_data)
-print("Network EA :\n", converted_Network_data)
+print('Network Container Values :\n', converted_NetworkContainer_data)
+print("Network Values :\n", converted_Network_data)
