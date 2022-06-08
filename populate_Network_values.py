@@ -43,4 +43,4 @@ with open('Network.csv', newline='') as csv_file:
         print(NW)
         print(Desc)
         print(EA_dict_NW)
-        #populate_NetworkContainer_ExtensibleAttribute(NW,Desc,EA_dict_NW)
+        populate_Network_ExtensibleAttribute(NW,Desc,EA_dict_NW)
