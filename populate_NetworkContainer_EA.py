@@ -27,7 +27,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
 
-populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', {'comment': 'Dev Network Container Used for testing scripts as part of the IPAM Project'}, {'Description': 'This is my test container description'})
+populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description'})
 
 #populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test container description'})
 
