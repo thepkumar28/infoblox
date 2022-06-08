@@ -20,8 +20,8 @@ def convert_Network_data_to_dict(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     comment = ib_network.comment
     Ea = ib_network.extattrs
-    desc = ib_network.extattrs.EA
-    return comment , Ea , desc
+    #desc = ib_network.extattrs.EA
+    return comment , Ea
 
 converted_data = convert_Network_data_to_dict('131.226.217.128/27')  
 
