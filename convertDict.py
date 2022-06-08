@@ -35,7 +35,7 @@ def convert_Network_data_to_dict(nw=str):
     #using strip() and split()  methods
     EA_dict_N = dict((a.strip(), b.strip())  
                      for a, b in (element.split('=')  
-                                  for element in EA_dict_N.split(',')))
+                                  for element in EA_N.split(',')))
     return EA_dict_N
 
 converted_NetworkContainer_data = convert_NetworkContainer_data_to_dict('131.226.192.0/18') 
