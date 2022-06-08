@@ -32,7 +32,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     ib_network_container.update()
     print(ib_network_container)
 
-with open('NetworkContainer_EA.csv', newline='') as csv_file:
+with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         dict_NC = (dict(row))
@@ -43,4 +43,4 @@ with open('NetworkContainer_EA.csv', newline='') as csv_file:
         print(NC)
         print(Desc)
         print(EA_dict_NC)
-        populate_NetworkContainer_ExtensibleAttribute(NC,Desc,EA_dict_NC)
+        #populate_NetworkContainer_ExtensibleAttribute(NC,Desc,EA_dict_NC)
