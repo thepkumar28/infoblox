@@ -24,8 +24,8 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
         ib_network_container.comment = desc
         ib_network_container.update()
     elif re.search("^SVR", ib_network_container.comment):
-        ib_network_container.comment = desc
-        ib_network_container.update()
+        #ib_network_container.comment = desc
+        #ib_network_container.update()
         print('Comment is :', ib_network_container.comment)   
     ea = objects.EA(exatt)
     ib_network_container.extattrs = ea
