@@ -18,7 +18,8 @@ connection = default_infoblox_connection()
 
 def convert_Network_data_to_dict(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    #return ib_network
+    ib_network_dict = dict(ib_network)
+    return ib_network_dict
 
 converted_data = convert_Network_data_to_dict('131.226.217.128/27')  
 
