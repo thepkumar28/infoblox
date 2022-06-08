@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 import sys
-
+import re
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -22,6 +22,8 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     if ib_network_container.comment == None:
         ib_network_container.comment = comm
         ib_network_container.update()
+    elif re.search("^SVR", ib_network_container.comment):
+        print('Comment is :', ib_network_container.comment) 
     else:
         print('Comment is :', ib_network_container.comment)    
     #ib_network_container.comment = comm
