@@ -41,7 +41,9 @@ with open('NetworkContainer_EA.csv', newline='') as csv_file:
     for row in csv_reader:
         dict_NC = (dict(row))
         NC = dict_NC["Network Container"]
+        Desc = dict_NC["Description"]
         del dict_NC["Network Container"]
         EA_dict_NC = dict_NC
-        print (NC)
+        print(NC)
+        print(Desc)
         print(EA_dict_NC)
