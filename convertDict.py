@@ -21,8 +21,8 @@ def convert_Network_data_to_dict(nw=str):
     comment = ib_network.comment
     Ea = []
     Ea = ib_network.extattrs
-    for item in Ea:
-        print(item)
+    #for item in Ea:
+    #    print(item)
     #desc = ib_network.extattrs.EA
     return comment , Ea
 
