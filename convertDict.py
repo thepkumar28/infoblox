@@ -22,10 +22,10 @@ def convert_NetworkContainer_data_to_dict(nw=str):
     tmp = str(ib_network_container.extattrs)
     Ea = tmp.strip("EAs:")
     #using strip() and split()  methods
-    result = dict((a.strip(), b.strip())  
+    Ea_dict = dict((a.strip(), b.strip())  
                      for a, b in (element.split('=')  
                                   for element in Ea.split(',')))
-    return result
+    return Ea_dict
  
 def convert_Network_data_to_dict(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
