@@ -18,7 +18,7 @@ def default_infoblox_connection():
 connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
-    ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
+    ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'comment'])
     if ib_network_container.comment == " ":
         ib_network_container.comment = comm
         print('The comment field is Null')
