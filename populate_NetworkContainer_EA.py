@@ -19,10 +19,9 @@ connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    #com = objects.comment(comm)
     ib_network_container.comment = comm
-    #ea = objects.EA(exatt)
-    #ib_network_container.extattrs = ea
+    ea = objects.EA(exatt)
+    ib_network_container.extattrs = ea
     ib_network_container.update()
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
