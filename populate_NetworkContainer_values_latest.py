@@ -2,6 +2,7 @@
 
 import sys
 import re
+import csv
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -23,7 +24,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
         ib_network_container.comment = comm
         ib_network_container.update()
     elif re.search("^SVR", ib_network_container.comment):
-        print('Comment is :', ib_network_container.comment) 
+        print('Comment is :', ib_network_container.comment)
     else:
         print('Comment is :', ib_network_container.comment)    
     #ib_network_container.comment = comm
@@ -32,9 +33,15 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     #ib_network_container.update()
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
-    print(ib_network_container)
-populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
+    #print(ib_network_container)
+#populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
 
-#populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test container description'})
-
-#print("Populated Extensible Attribute for the Network Container is :\n" , populate_NetworkContainer_EA)
+with open('NetworkContainer_EA.csv', newline='') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    for row in csv_reader:
+        dict_NC = (dict(row))
+        NC = dict_NC["Network Container"]
+        del dict_NC["Network Container"]
+        EA_dict_NC = dict_NC
+        print (NC)
+        print(EA_dict_NC)
