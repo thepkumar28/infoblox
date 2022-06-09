@@ -21,6 +21,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
     ea_dict = ib_network_container.extattrs.ea_dict
+    ea_dict.update(exatt.ea_dict)
+    merged_ea = object.EA(ea_dict)
     #ea = objects.EA(exatt)
     #ea_ex = ib_network_container.extattrs
     #ea_la = ib_network_container.ea
@@ -33,7 +35,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #print ("EA Input :\n", ea)
     #print ("latest EA :\n", ea_la)
     #print ("EA post assigment:\n", ib_network_container.extattrs)
-    print("EA dictionary :\n", ea_dict)
+    print("Existing EA dictionary :\n", ea_dict)
+    print("Merged EA Dictionary:\n", merged_ea)
 
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
 
