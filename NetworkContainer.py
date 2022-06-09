@@ -17,7 +17,7 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
+def NetworkContainer_Attribute(nw=str, comm=str, exatt=None):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
     ea_dict = ib_network_container.extattrs.ea_dict
