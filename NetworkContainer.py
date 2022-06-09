@@ -21,7 +21,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=None):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
     ea_dict = ib_network_container.extattrs.ea_dict
-    ea = objects.EA(exatt)
+    ea_in = objects.EA(exatt)
+    ea_ex = objects.EA(ea_dict)
     #ea_dict.update(exatt.ea_dict)
     #merged_ea = objects.EA(ea_dict)
     #merged_ea = ea
@@ -35,8 +36,10 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=None):
     #print ("Searched :\n", ib_network_container)
     print("Existing EA dictionary :\n", ea_dict)
     print ("Existing EA type :\n", type(ea_dict))
-    print ("EA Input object format :\n", ea)
-    print ("EA Input object format type :\n", type(ea))
+    print ("EA Input object format :\n", ea_in)
+    print ("EA Input object format type :\n", type(ea_in))
+    print ("EA Existing object format :\n", ea_ex)
+    print ("EA Existing object format type :\n", type(ea_ex))
     print ("EA Input :\n", exatt)
     print ("EA Input type :\n", type(exatt))
     #print ("latest EA :\n", ea_la)
