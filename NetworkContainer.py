@@ -25,8 +25,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container.update()
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
-    print (ib_network_container)
-    print (ea)
+    print ("Searched :\n", ib_network_container)
+    print ("EA :\n", ea)
 
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
 
