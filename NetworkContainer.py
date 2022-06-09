@@ -20,10 +20,10 @@ connection = default_infoblox_connection()
 def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
-    ea_ex = ib_network_container.extattrs
-    ea = ib_network_container.extattrs.ea_dict
+    ea_ex_dict = ib_network_container.extattrs.ea_dict
+    ea = object.EA(ea_ex_dict)
     #ea.update(exatt)
-    merged_ea = ea
+    #merged_ea = ea
     #ea = objects.EA(exatt)
     #ea_ex = ib_network_container.extattrs
     #ea_la = ib_network_container.ea
@@ -32,12 +32,12 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
     #print ("Searched :\n", ib_network_container)
-    print ("Existing EA :\n", ea_ex)
     #print ("EA Input :\n", ea)
     #print ("latest EA :\n", ea_la)
     #print ("EA post assigment:\n", ib_network_container.extattrs)
-    print("Existing EA dictionary :\n", ea)
-    print("Merged EA Dictionary:\n", merged_ea)
+    print("Existing EA dictionary :\n", ea_ex_dict)
+    print ("Converted EA :\n", ea)
+    #print("Merged EA Dictionary:\n", merged_ea)
 
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
 
