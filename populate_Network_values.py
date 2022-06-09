@@ -1,7 +1,6 @@
 #! /usr/bin/python3
 
 import sys
-import re
 import csv
 import logging
 logging.basicConfig(level=logging.DEBUG)
@@ -23,17 +22,11 @@ def populate_Network_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     if ib_network.comment == None:
         ib_network.comment = desc
         ib_network.update()
-    elif re.search("^SVR", ib_network.comment):
-        #ib_network.comment = desc
-        #ib_network.update()
-        print('Comment is :', ib_network.comment)  
 
     ea_dict = ib_network.extattrs.ea_dict
     ea_dict.update(exatt)
     merged_ea = objects.EA(ea_dict)
-    ib_network.extattrs = merged_ea 
-    #ea = objects.EA(exatt)
-    #ib_network.extattrs = ea
+    ib_network.extattrs = merged_ea
     ib_network.update()
     print(ib_network)
 
