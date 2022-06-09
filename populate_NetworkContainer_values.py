@@ -39,7 +39,4 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         Desc = dict_NC["Description"]
         del dict_NC["Network Container"]
         EA_dict_NC = dict_NC
-        print(NC)
-        print(Desc)
-        print(EA_dict_NC)
         populate_NetworkContainer_ExtensibleAttribute(NC,Desc,EA_dict_NC)
