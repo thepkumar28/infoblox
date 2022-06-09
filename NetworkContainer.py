@@ -29,7 +29,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     print ("Existing EA :\n", ib_network_container.extattrs)
     print ("EA Input :\n", ea)
 
-NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
+NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Environment': 'Test'})
 
 #populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test container description'})
 
