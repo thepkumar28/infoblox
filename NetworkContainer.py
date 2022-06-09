@@ -44,14 +44,6 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     print ("EA Input :\n", exatt)
     print ("EA Input type :\n", type(exatt))
     print("Merged EA Dictionary:\n", ea_dict)
-    #print ("latest EA :\n", ea_la)
-    #print ("EA post assigment:\n", ib_network_container.extattrs)
-    #print("Existing EA dictionary :\n", ea_dict)
-    #print ("Converted EA :\n", ea)
     print("Merged EA :\n", merged_ea)
 
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
-
-#populate_NetworkContainer_EA = populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18',{'Description': 'This is my test container description'})
-
-#print("Populated Extensible Attribute for the Network Container is :\n" , populate_NetworkContainer_EA)
