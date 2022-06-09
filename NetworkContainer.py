@@ -22,7 +22,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container.comment = comm
     ea_ex = ib_network_container.extattrs
     ea = ib_network_container.extattrs.ea_dict
-    ea.update(exatt.ea)
+    ea.update(exatt)
     merged_ea = object.EA(ea)
     #ea = objects.EA(exatt)
     #ea_ex = ib_network_container.extattrs
