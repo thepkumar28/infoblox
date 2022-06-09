@@ -21,7 +21,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
     ea_ex_dict = ib_network_container.extattrs.ea_dict
-    ea = object.EA(exatt)
+    ea = objects.EA(ea_ex_dict)
     #ea.update(exatt)
     #merged_ea = ea
     #ea = objects.EA(exatt)
