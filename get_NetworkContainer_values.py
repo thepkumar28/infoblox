@@ -19,12 +19,13 @@ connection = default_infoblox_connection()
 def get_network_container_values(nw=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     comment = ib_network_container.comment
-    tmp = str(ib_network_container.extattrs)
-    EA_NC = tmp.strip("EAs:")
-    #using strip() and split()  methods
-    EA_dict_NC = dict((a.strip(), b.strip())  
-                     for a, b in (element.split('=')  
-                                  for element in EA_NC.split(',')))
+    EA_dict_NC = ib_network_container.extattrs.ea_dict
+    #tmp = str(ib_network_container.extattrs)
+    #EA_NC = tmp.strip("EAs:")
+    ##using strip() and split()  methods
+    #EA_dict_NC = dict((a.strip(), b.strip())  
+    #                 for a, b in (element.split('=')  
+    #                              for element in EA_NC.split(',')))
     return EA_dict_NC , comment
 
 converted_NetworkContainer_data = get_network_container_values('131.226.192.0/18')
