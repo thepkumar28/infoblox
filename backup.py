@@ -29,7 +29,7 @@ def backup_NetworkContainer_data(nw=str):
         f.write(str(ib_network_container) + '\n')
     return ib_network_container
 
-with open('Network_EA.csv', newline='') as csv_file:
+with open('Network.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
@@ -37,7 +37,7 @@ with open('Network_EA.csv', newline='') as csv_file:
         print (NW)
         backup_Network_data(NW)
 
-with open('NetworkContainer_EA.csv', newline='') as csv_file:
+with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
