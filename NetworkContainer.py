@@ -33,7 +33,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
     #print ("Searched :\n", ib_network_container)
-    print ("EA Input :\n", ea)
+    print ("EA Input object format :\n", ea)
+    print ("EA Input :\n", exatt)
     #print ("latest EA :\n", ea_la)
     #print ("EA post assigment:\n", ib_network_container.extattrs)
     #print("Existing EA dictionary :\n", ea_dict)
