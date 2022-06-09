@@ -20,6 +20,7 @@ connection = default_infoblox_connection()
 def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
+    ea_ex = ib_network_container.extattrs
     ea_dict = ib_network_container.extattrs.ea_dict
     ea_dict.update(exatt.ea_dict)
     merged_ea = object.EA(ea_dict)
@@ -31,7 +32,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container_update=ib_network_container.update()
     #return ib_network_container_update
     #print ("Searched :\n", ib_network_container)
-    #print ("Existing EA :\n", ea_ex)
+    print ("Existing EA :\n", ea_ex)
     #print ("EA Input :\n", ea)
     #print ("latest EA :\n", ea_la)
     #print ("EA post assigment:\n", ib_network_container.extattrs)
