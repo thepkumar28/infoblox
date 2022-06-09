@@ -19,12 +19,13 @@ connection = default_infoblox_connection()
 def get_network_values(nw=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     comment = ib_network.comment
-    tmp = str(ib_network.extattrs)
-    EA_N = tmp.strip("EAs:")
-    #using strip() and split()  methods
-    EA_dict_N = dict((a.strip(), b.strip())  
-                     for a, b in (element.split('=')  
-                                  for element in EA_N.split(',')))
+    EA_dict_N = ib_network.extattrs.ea_dict
+    #tmp = str(ib_network.extattrs)
+    #EA_N = tmp.strip("EAs:")
+    ##using strip() and split()  methods
+    #EA_dict_N = dict((a.strip(), b.strip())  
+    #                 for a, b in (element.split('=')  
+    #                              for element in EA_N.split(',')))
     return EA_dict_N , comment
 
 converted_Network_data = get_network_values('131.226.217.128/27')
