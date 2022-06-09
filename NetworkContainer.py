@@ -23,7 +23,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ea_dict = ib_network_container.extattrs.ea_dict
     ea_in = objects.EA(exatt)
     ea_ex = objects.EA(ea_dict)
-    #ea_dict.update(exatt.ea_dict)
+    merged_ea_dict = ea_dict.update(exatt)
     #merged_ea = objects.EA(ea_dict)
     #merged_ea = ea
     #ea = objects.EA(exatt)
@@ -42,6 +42,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     print ("EA Existing object format type :\n", type(ea_ex))
     print ("EA Input :\n", exatt)
     print ("EA Input type :\n", type(exatt))
+    print("Merged EA Dictionary:\n", merged_ea_dict)
     #print ("latest EA :\n", ea_la)
     #print ("EA post assigment:\n", ib_network_container.extattrs)
     #print("Existing EA dictionary :\n", ea_dict)
