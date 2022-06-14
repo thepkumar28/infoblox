@@ -22,7 +22,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container.comment = comm
     ea_ex = ib_network_container.extattrs
     ea_ex_dict = ib_network_container.extattrs.ea_dict
-    if ea_ex == None :
+    if ea_ex_dict == None :
         print("No Exisiting EAs")
     else:
         print("Exisitng EAs")
