@@ -67,6 +67,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             ib_network_container.comment = desc
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
-            print("The latest comment is :\n", ib_network_container.comment)    
+            print("The latest comment is :\n", ib_network_container.comment)
+        else:
+            print("All filelds are correct !!!")       
           
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
