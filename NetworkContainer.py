@@ -22,7 +22,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #ib_network_container.comment = comm
     ea_ex_dict = ib_network_container.extattrs.ea_dict
     desc = ea_ex_dict['Description']
-    RQ_num = ea_ex_dict['Request Number']
+    #RQ_num = ea_ex_dict['Request Number']
     if ib_network_container.comment == None:
         ib_network_container.comment = desc
         print('Comment is:\n', ib_network_container.comment)
