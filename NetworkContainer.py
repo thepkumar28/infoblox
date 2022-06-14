@@ -40,11 +40,14 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
             RQ_num = {'Request Number':ib_network_container.comment}
             print("Request number dict is :\n", RQ_num)
+            desc = ea_ex_dict['Description']
             ea_ex_dict.update(RQ_num)
             merged_ea = objects.EA(ea_ex_dict)
             ib_network_container.extattrs = merged_ea
+            ib_network_container.comment = desc
             ib_network_container.update()
-            print("Updated EA dictionary is :\n", ea_ex_dict)
+            print("The latest EA dictionary is :\n", ea_ex_dict)
+            print("The latest comment is :\n", ib_network_container.comment)
 
     else:
         print("The Description is:\n", ea_ex_dict["Description"])    
