@@ -27,7 +27,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
         merged_ea = objects.EA(ea_ex_dict)
         ib_network_container.extattrs = merged_ea
         ib_network_container.update()
-        print(ib_network_container)
+        print("Updated EA dictionary is :\n", ea_ex_dict)
 
     else:
         print("The Description is:\n", ea_ex_dict["Description"])    
