@@ -48,6 +48,10 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
+        else: 
+            print("The latest EA dictionary is :\n", ea_ex_dict)
+            print("The latest comment is :\n", ib_network_container.comment)
+            print("Comment is correct !!!")
 
     else:
         print("Description Exists !!!")
