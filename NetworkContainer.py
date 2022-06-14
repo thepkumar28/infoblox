@@ -17,7 +17,7 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
+def NetworkContainer_Attribute(nw=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
 
     ea_ex_dict = ib_network_container.extattrs.ea_dict
@@ -78,4 +78,4 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             print("The latest comment is :\n", ib_network_container.comment)
             print("All filelds are correct !!!")       
           
-NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
+NetworkContainer_Attribute('131.226.192.0/18', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
