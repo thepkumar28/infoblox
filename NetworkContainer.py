@@ -38,6 +38,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             print("The updated comment is :\n", ib_network_container.comment)
         elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
             print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
+            RQ_num = {'Request Number':ib_network_container.comment}
+            print("Request number dict is :\n", RQ_num)
 
     else:
         print("The Description is:\n", ea_ex_dict["Description"])    
