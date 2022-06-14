@@ -35,7 +35,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             print("Comment field is Empty !!!")
             ib_network_container.comment = desc
             ib_network_container.update()
-            print("The updated comment is :\n", ib_network_container.comment)
+            print("The latest EA dictionary is :\n", ea_ex_dict)
+            print("The latest comment is :\n", ib_network_container.comment)
         elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
             print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
             RQ_num = {'Request Number':ib_network_container.comment}
@@ -56,7 +57,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             print("Comment field is Empty !!!")
             ib_network_container.comment = desc
             ib_network_container.update()
-            print("The updated comment is :\n", ib_network_container.comment)
+            print("The latest EA dictionary is :\n", ea_ex_dict)
+            print("The latest comment is :\n", ib_network_container.comment)
         elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
             print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
             RQ_num = {'Request Number':ib_network_container.comment}
@@ -69,6 +71,8 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
         else:
+            print("The latest EA dictionary is :\n", ea_ex_dict)
+            print("The latest comment is :\n", ib_network_container.comment)
             print("All filelds are correct !!!")       
           
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
