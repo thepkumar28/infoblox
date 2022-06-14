@@ -23,6 +23,12 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ea_ex_dict = ib_network_container.extattrs.ea_dict
     if 'Description' not in ea_ex_dict:
         print("No Existing Description")
+        ea_ex_dict.update(exatt)
+        merged_ea = objects.EA(ea_ex_dict)
+        ib_network_container.extattrs = merged_ea
+        ib_network_container.update()
+        print(ib_network_container)
+
     else:
         print("The Description is:\n", ea_ex_dict["Description"])    
           
