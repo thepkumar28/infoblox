@@ -21,14 +21,20 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
     ea_ex_dict = ib_network_container.extattrs.ea_dict
-    desc = ea_ex_dict['Description']
+    if ea_ex_dict['Description']:
+       desc = ea_ex_dict['Description']
+       print("Exisitng description is:\n",desc)
+    else:
+        print("No Exisiting Description")   
+       
     #RQ_num = ea_ex_dict['Request Number']
-    if ib_network_container.comment == None:
-        ib_network_container.comment = desc
-        print('Comment is:\n', ib_network_container.comment)
-        #ib_network_container.update()
-    elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
-        print('Comment is:\n', ib_network_container.comment)
+    #if ib_network_container.comment == None:
+    #    ib_network_container.comment = desc
+    #    print('Comment is:\n', ib_network_container.comment)
+    #    #ib_network_container.update()
+    #elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
+#
+    #    print('Comment is:\n', ib_network_container.comment)
     #ea_dict = ib_network_container.extattrs.ea_dict
     #ea_in = objects.EA(exatt)
     #ea_ex = objects.EA(ea_dict)
@@ -53,7 +59,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     #print ("EA Input type :\n", type(exatt))
     #print("Merged EA Dictionary:\n", ea_dict)
     #print("Merged EA :\n", merged_ea)
-    print("Exisitng description is:\n",desc)
+    #print("Exisitng description is:\n",desc)
     #print("Request Number is:\n",RQ_num)
 
 NetworkContainer_Attribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
