@@ -28,6 +28,11 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
         ib_network_container.extattrs = merged_ea
         ib_network_container.update()
         print("Updated EA dictionary is :\n", ea_ex_dict)
+        desc = ea_ex_dict['Dictionary']
+        print("The Description is:\n", ea_ex_dict["Description"])
+        #if ib_network_container.comment == None:
+        #    ib_network_container.comment = desc
+        #    ib_network_container.update()
 
     else:
         print("The Description is:\n", ea_ex_dict["Description"])    
