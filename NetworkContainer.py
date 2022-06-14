@@ -19,10 +19,11 @@ connection = default_infoblox_connection()
 
 def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    #ib_network_container.comment = comm
+
     ea_ex_dict = ib_network_container.extattrs.ea_dict
+
     if 'Description' not in ea_ex_dict:
-        print("No Existing Description")
+        print("No Existing Description !!!")
         ea_ex_dict.update(exatt)
         merged_ea = objects.EA(ea_ex_dict)
         ib_network_container.extattrs = merged_ea
@@ -30,9 +31,13 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
         print("Updated EA dictionary is :\n", ea_ex_dict)
         desc = ea_ex_dict['Description']
         print("The Description is:\n", desc)
-        #if ib_network_container.comment == None:
-        #    ib_network_container.comment = desc
-        #    ib_network_container.update()
+        if ib_network_container.comment == None:
+            print("Comment field is Empty !!!")
+            ib_network_container.comment = desc
+            ib_network_container.update()
+            print("The updated comment is :\n", ib_network_container.comment)
+        elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
+            print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
 
     else:
         print("The Description is:\n", ea_ex_dict["Description"])    
