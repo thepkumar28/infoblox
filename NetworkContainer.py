@@ -21,7 +21,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     #ib_network_container.comment = comm
     ea_ex_dict = ib_network_container.extattrs.ea_dict
-    if ea_ex_dict['Description']:
+    if ea_ex_dict['Description'] != None :
        desc = ea_ex_dict['Description']
        print("Exisitng description is:\n",desc)
     else:
