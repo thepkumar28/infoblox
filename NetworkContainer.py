@@ -27,7 +27,7 @@ def NetworkContainer_Attribute(nw=str, comm=str, exatt=str):
         ib_network_container.comment = desc
         print('Comment is:\n', ib_network_container.comment)
         #ib_network_container.update()
-    elif re.search(r'^SVR'|r'^RFC',ib_network_container.comment,re.I):
+    elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
         print('Comment is:\n', ib_network_container.comment)
     #ea_dict = ib_network_container.extattrs.ea_dict
     #ea_in = objects.EA(exatt)
