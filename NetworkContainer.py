@@ -36,7 +36,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
-        elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
+        elif re.search(r'^SVR',ib_network_container.comment,re.I):
             print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
             RQ_num = {'Request Number':ib_network_container.comment}
             #print("Request number dict is :\n", RQ_num)
@@ -62,7 +62,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
-        elif re.search(r'^SVR|RFC',ib_network_container.comment,re.I):
+        elif re.search(r'^SVR',ib_network_container.comment,re.I):
             print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
             RQ_num = {'Request Number':ib_network_container.comment}
             #print("Request number dict is :\n", RQ_num)
