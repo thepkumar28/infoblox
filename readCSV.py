@@ -9,7 +9,12 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         #NC = tmp["Network Container"]
         #desc = tmp["Description"]
         for k,v in tmp.items():
-            print(k[0],v[0])
+            if k == "Network Container":
+                NC = {k:v}
+                print(NC)
+            elif k == "Description":
+                Desc = {k:v}
+                print(Desc)    
         #del tmp["Network Container"]
         #print (NC)
         #print(desc)
