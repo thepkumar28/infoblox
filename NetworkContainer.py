@@ -105,6 +105,7 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         #desc = {k:tmp[k] for k in description_key if k in tmp}    
         #print("NC :\n", NC)
         #print("desc :\n", desc)
+        print(tmp)
         for k in 'Description':
             if k in tmp:
                 print(k)
