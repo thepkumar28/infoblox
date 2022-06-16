@@ -29,7 +29,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
     ea_ex_dict = ib_network_container.extattrs.ea_dict
 
     if 'Description' not in ea_ex_dict:
-        print("Description doesn't Exist. Copying the Description from LLD !!!")
+        print("Description doesn't Exist for {}. Copying the Description from LLD !!!".format(nw))
         ea_ex_dict.update(exatt)
         merged_ea = objects.EA(ea_ex_dict)
         ib_network_container.extattrs = merged_ea
@@ -62,7 +62,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 writer.writerow(my_dict)
 
     else:
-        print("Description Exists , User Intervention is required !!!")
+        print("Description Exists for {}, User Intervention is required !!!".format(nw))
         desc = ea_ex_dict['Description']
         #print("The Description is:\n", desc)
         if ib_network_container.comment == None:
