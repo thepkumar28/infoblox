@@ -8,7 +8,9 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         tmp = (dict(row))
         NC = tmp["Network Container"]
         desc = tmp["Description"]
+        for k,v in tmp.items():
+            print(k,v)
         #del tmp["Network Container"]
-        print (NC)
-        print(desc)
+        #print (NC)
+        #print(desc)
         
