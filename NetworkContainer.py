@@ -100,13 +100,12 @@ with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
-        #Desc_dict = {}
+        Desc_dict = {}
         for k,v in tmp.items():
             if k == "Network Container":
                 NC_dict = {k:v}
                 NC = NC_dict["Network Container"]
-            elif k == "Description":
-                Desc_dict = {}
+            if k == "Description":
                 Desc_dict = {k:v}
             #NetworkContainer_Attribute(NC,Desc_dict)
             print("NC :\n", NC)
