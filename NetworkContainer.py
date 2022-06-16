@@ -100,8 +100,11 @@ with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
-        NC = tmp["Network Container"]
-        wanted_key = ['Description']
-        desc = {k:tmp[k] for k in wanted_key if k in tmp}    
-        print("NC :\n", NC)
-        print("desc :\n", desc)
+        #NC = tmp["Network Container"]
+        #description_key = ['Description']
+        #desc = {k:tmp[k] for k in description_key if k in tmp}    
+        #print("NC :\n", NC)
+        #print("desc :\n", desc)
+        for k in 'Description':
+            if k in tmp:
+                print(k)
