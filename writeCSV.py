@@ -34,5 +34,12 @@ def write_to_CSV(nw=str):
         writer.writeheader()
         #writer.writerow(ea_ex_dict)
         #writer.writerow(my_dict)
+    with open('write.csv', 'w', newline='') as csv_file:
+        #fieldnames = ['Country', 'Description', 'Environment', 'Operational State', 'Request Number']
+        fieldnames = ['Network Container', 'Comment', 'Description']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        #writer.writeheader()
+        #writer.writerow(ea_ex_dict)
+        writer.writerow(my_dict)        
 
 write_to_CSV('131.226.192.0/18')
