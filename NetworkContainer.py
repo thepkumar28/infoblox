@@ -62,7 +62,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 writer.writerow(my_dict)
 
     else:
-        print("Description Exists !!!")
+        print("Description Exists , User Intervention is required !!!")
         desc = ea_ex_dict['Description']
         #print("The Description is:\n", desc)
         if ib_network_container.comment == None:
