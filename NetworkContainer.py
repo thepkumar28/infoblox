@@ -88,7 +88,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)
         else:
-            print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
+            print("The existing comment is as below :\n", ib_network_container.comment)
             my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
             with open('UserIntervention.csv', 'a', newline='') as csv_file:
                 fieldnames = ['Network Container', 'Comment', 'Description']
