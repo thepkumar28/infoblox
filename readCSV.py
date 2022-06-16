@@ -10,11 +10,13 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         #desc = tmp["Description"]
         for k,v in tmp.items():
             if k == "Network Container":
-                NC = {k:v}
+                NC_dict = {k:v}
+                NC = NC_dict["Network Container"]
+                print(NC_dict)
                 print(NC)
             elif k == "Description":
-                Desc = {k:v}
-                print(Desc)    
+                Desc_dict = {k:v}
+                print(Desc_dict)    
         #del tmp["Network Container"]
         #print (NC)
         #print(desc)
