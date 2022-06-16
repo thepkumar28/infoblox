@@ -26,7 +26,7 @@ def write_to_CSV(nw=str):
     print("The EA Dictionary is :\n", ea_ex_dict)
 
     with open('write.csv', 'w', newline='') as csv_file:
-        fieldnames = ['player_name', 'fide_rating']
+        fieldnames = ['A', 'B', 'C', 'D', 'E']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         #writer = csv.DictWriter(csv_file)
         #writer.writeheader()
