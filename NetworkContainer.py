@@ -54,7 +54,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
         else:
-            my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':ea_ex_dict['Description']}
+            my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
             with open('UserIntervention.csv', 'a', newline='') as csv_file:
                 fieldnames = ['Network Container', 'Comment', 'Description']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
@@ -74,7 +74,18 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ib_network_container.comment = ""
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
-            print("The latest comment is :\n", ib_network_container.comment)  
+            #print("The latest comment is :\n", ib_network_container.comment)
+            my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
+            with open('UserIntervention.csv', 'a', newline='') as csv_file:
+                fieldnames = ['Network Container', 'Comment', 'Description']
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+                writer.writerow(my_dict)
+        else:
+            my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
+            with open('UserIntervention.csv', 'a', newline='') as csv_file:
+                fieldnames = ['Network Container', 'Comment', 'Description']
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+                writer.writerow(my_dict)  
           
 #NetworkContainer_Attribute('131.226.192.0/18', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
 
