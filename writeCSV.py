@@ -27,7 +27,7 @@ def write_to_CSV(nw=str):
     
     my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':ea_ex_dict['Description']}
 
-    with open('write.csv', 'a', newline='') as csv_file:
+    with open('write.csv', 'w', newline='') as csv_file:
         #fieldnames = ['Country', 'Description', 'Environment', 'Operational State', 'Request Number']
         fieldnames = ['Network Container', 'Comment', 'Description']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
