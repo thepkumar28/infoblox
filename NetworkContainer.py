@@ -29,7 +29,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
     ea_ex_dict = ib_network_container.extattrs.ea_dict
 
     if 'Description' not in ea_ex_dict:
-        print("Description doesn't Exist !!!")
+        print("Description doesn't Exist. Copying the Description from LLD !!!")
         ea_ex_dict.update(exatt)
         merged_ea = objects.EA(ea_ex_dict)
         ib_network_container.extattrs = merged_ea
@@ -37,13 +37,13 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
         desc = ea_ex_dict['Description']
         #print("The Description is:\n", desc)
         if ib_network_container.comment == None:
-            print("Comment field is Empty !!!")
+            print("Comment field is Empty for {}. Copying from Description !!!".format(nw))
             ib_network_container.comment = desc
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
         elif re.search(r'^SVR',ib_network_container.comment,re.I):
-            print("The existing comment is as below and it needs to be updated:\n", ib_network_container.comment)
+            print("The existing comment for {} is as below , moving it to the Request number field and Copying the Description to the Comment field:\n{}".format(nw, ib_network_container.comment))
             RQ_num = {'Request Number':ib_network_container.comment}
             #print("Request number dict is :\n", RQ_num)
             ea_ex_dict.update(RQ_num)
@@ -54,6 +54,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
         else:
+            print("The existing comment for {} is as below :\n{}".format(nw, ib_network_container.comment))
             my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
             with open('UserIntervention.csv', 'a', newline='') as csv_file:
                 fieldnames = ['Network Container', 'Comment', 'Description']
@@ -72,7 +73,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)
         elif re.search(r'^SVR',ib_network_container.comment,re.I):
-            print("The existing comment for {} is as below and it needs to be updated:\n{}".format(nw, ib_network_container.comment))
+            print("The existing comment for {} is as below , moving it to the Request number field:\n{}".format(nw, ib_network_container.comment))
             RQ_num = {'Request Number':ib_network_container.comment}
             #print("Request number dict is :\n", RQ_num)
             ea_ex_dict.update(RQ_num)
@@ -94,8 +95,6 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 fieldnames = ['Network Container', 'Comment', 'Description']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)  
-          
-#NetworkContainer_Attribute('131.226.192.0/18', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
 
 with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
