@@ -6,10 +6,10 @@ with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
-        NC = tmp["Network Container"]
-        desc = tmp["Description"]
+        #NC = tmp["Network Container"]
+        #desc = tmp["Description"]
         for k,v in tmp.items():
-            print(k,v)
+            print(k[0],v[0])
         #del tmp["Network Container"]
         #print (NC)
         #print(desc)
