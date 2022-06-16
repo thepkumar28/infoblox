@@ -71,6 +71,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ea_ex_dict.update(RQ_num)
             merged_ea = objects.EA(ea_ex_dict)
             ib_network_container.extattrs = merged_ea
+            ib_network_container.comment = ""
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)  
