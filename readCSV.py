@@ -15,5 +15,8 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         wanted_key = ['Description']
         result = {k:tmp[k] for k in wanted_key if k in tmp}    
         print (result)
-
+        #for k in ['Description']:
+        #    if k in tmp:
+        #        desc = {k:tmp[k]}
+        #        print(desc)
         
