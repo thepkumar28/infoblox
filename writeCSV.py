@@ -33,6 +33,6 @@ def write_to_CSV(nw=str):
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         #writer.writerow(ea_ex_dict)
-        writer.writerow(my_dict)
+        #writer.writerow(my_dict)
 
 write_to_CSV('131.226.192.0/18')
