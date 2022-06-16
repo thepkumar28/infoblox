@@ -100,6 +100,7 @@ with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
+        Desc_dict = {}
         for k,v in tmp.items():
             if k == "Network Container":
                 NC_dict = {k:v}
