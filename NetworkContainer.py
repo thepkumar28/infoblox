@@ -18,15 +18,15 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
+with open('UserIntervention.csv', 'w', newline='') as csv_file:
+    fieldnames = ['Network Container', 'Comment', 'Description']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+
 def NetworkContainer_Attribute(nw=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
 
     ea_ex_dict = ib_network_container.extattrs.ea_dict
-
-    with open('UserIntervention.csv', 'w', newline='') as csv_file:
-        fieldnames = ['Network Container', 'Comment', 'Description']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
 
     if 'Description' not in ea_ex_dict:
         print("Description doesn't Exist !!!")
