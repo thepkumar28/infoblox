@@ -54,7 +54,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
         else:
-            print("The existing comment for {} is as below , moving the values to the UserIntervention.csv file.\n{}".format(nw, ib_network_container.comment))
+            print("The existing comment for {} is as below , User Intervention is required. Moving the values to the UserIntervention.csv file.\n{}".format(nw, ib_network_container.comment))
             my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
             with open('UserIntervention.csv', 'a', newline='') as csv_file:
                 fieldnames = ['Network Container', 'Comment', 'Description']
