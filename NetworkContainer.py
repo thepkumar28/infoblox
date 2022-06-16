@@ -2,6 +2,7 @@
 
 import sys
 import re
+import csv
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -47,10 +48,13 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ib_network_container.update()
             print("The latest EA dictionary is :\n", ea_ex_dict)
             print("The latest comment is :\n", ib_network_container.comment)
-        else: 
-            print("The latest EA dictionary is :\n", ea_ex_dict)
-            print("The latest comment is :\n", ib_network_container.comment)
-            print("Comment is correct !!!")
+        #else:
+        #    with open('.csv', 'w', newline='') as csv_file:
+        #        fieldnames = ['Network Container', 'Comment', 'Description']
+        #        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        #        writer.writeheader()
+        #        #writer.writerow(ea_ex_dict)
+        #        writer.writerow(my_dict)
 
     else:
         print("Description Exists !!!")
@@ -78,4 +82,12 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             print("The latest comment is :\n", ib_network_container.comment)
             print("All filelds are correct !!!")       
           
-NetworkContainer_Attribute('131.226.192.0/18', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
+#NetworkContainer_Attribute('131.226.192.0/18', {'Description': 'Dev Network Container Used for testing scripts as part of the IPAM Project'})
+
+with open('NetworkContainer.csv', newline='') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    for row in csv_reader:
+        tmp = (dict(row))
+        NC = tmp["Network Container"]
+        print (NC)
+        NetworkContainer_Attribute(NC)
