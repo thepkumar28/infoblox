@@ -28,8 +28,7 @@ def write_to_CSV(nw=str):
     with open('write.csv', 'w', newline='') as csv_file:
         fieldnames = ['Country', 'Description', 'Environment', 'Operational State', 'Request Number']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        #writer = csv.DictWriter(csv_file)
-        #writer.writeheader()
+        writer.writeheader()
         writer.writerow(ea_ex_dict)
 
 write_to_CSV('131.226.192.0/18')
