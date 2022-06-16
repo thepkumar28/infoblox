@@ -16,3 +16,5 @@ def default_infoblox_connection():
     conn = Connector(opts)
     return conn
 connection = default_infoblox_connection()
+
+def create_Host():
