@@ -108,4 +108,5 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         #print(tmp)
         for k in ['Description']:
             if k in tmp:
-                print(k)
+                desc = {k:tmp[k]}
+                print(desc)
