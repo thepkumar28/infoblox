@@ -102,7 +102,7 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         tmp = (dict(row))
         #Desc_dict = {}
         for k,v in tmp.items():
-            print(k,v)
+            print(k)
             #if k == "Description":
             #    Des_dict = {k:v}
             #if k == "Network Container":
