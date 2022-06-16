@@ -17,6 +17,11 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
+with open('write.csv', 'w', newline='') as csv_file:
+    fieldnames = ['Network Container', 'Comment', 'Description']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+
 def write_to_CSV(nw=str):
 
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
@@ -30,10 +35,13 @@ def write_to_CSV(nw=str):
     with open('write.csv', 'a', newline='') as csv_file:
         fieldnames = ['Network Container', 'Comment', 'Description']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
-    with open('write.csv', 'a', newline='') as csv_file:
-        fieldnames = ['Network Container', 'Comment', 'Description']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writerow(my_dict)        
+        writer.writerow(my_dict)       
 
-write_to_CSV('131.226.192.0/18')
+#write_to_CSV('131.226.192.0/18')
+with open('NetworkContainer.csv', newline='') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    for row in csv_reader:
+        tmp = (dict(row))
+        NC = tmp["Network Container"]
+        print (NC)
+        write_to_CSV(NC)
