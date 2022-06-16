@@ -11,8 +11,9 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         #del tmp["Network Container"]
         #print (NC)
         #print(desc)
-        print(tmp)
-        result = {k:tmp[k] for k in ('Description') if k in tmp}    
+        #print(tmp)
+        wanted_key = ['Description']
+        result = {k:tmp[k] for k in wanted_key if k in tmp}    
         print (result)
 
         
