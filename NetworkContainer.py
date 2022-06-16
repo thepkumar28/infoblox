@@ -107,4 +107,6 @@ with open('NetworkContainer.csv', newline='') as csv_file:
                 NC = NC_dict["Network Container"]
             elif k == "Description":
                 Desc_dict = {k:v}
-            NetworkContainer_Attribute(NC,Desc_dict)
+            #NetworkContainer_Attribute(NC,Desc_dict)
+            print("NC :\n", NC)
+            print("Desc_dict :\n", Desc_dict)
