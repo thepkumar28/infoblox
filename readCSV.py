@@ -8,16 +8,10 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         tmp = (dict(row))
         #NC = tmp["Network Container"]
         #desc = tmp["Description"]
-        for k,v in tmp.items():
-            if k == "Network Container":
-                NC_dict = {k:v}
-                NC = NC_dict["Network Container"]
-                print(NC_dict)
-                print(NC)
-            elif k == "Description":
-                Desc_dict = {k:v}
-                print(Desc_dict)    
         #del tmp["Network Container"]
         #print (NC)
         #print(desc)
+        result = {k:tmp[k] for k in ('Network Container','Description') if k in tmp}    
+        print (result)
+
         
