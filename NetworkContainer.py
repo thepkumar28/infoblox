@@ -39,8 +39,8 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             print("Comment field is Empty for {}. Copying from Description !!!".format(nw))
             ib_network_container.comment = desc
             ib_network_container.update()
-            print("The latest EA dictionary is :\n", ea_ex_dict)
-            print("The latest comment is :\n", ib_network_container.comment)
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
+            print("The latest comment for {} is :\n{}".format(nw, ib_network_container.comment))
         elif re.search(r'^SVR',ib_network_container.comment,re.I):
             print("The existing comment for {} is as below , moving it to the Request number field and Copying the Description to the Comment field.\n{}".format(nw, ib_network_container.comment))
             RQ_num = {'Request Number':ib_network_container.comment}
@@ -49,8 +49,8 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ib_network_container.extattrs = merged_ea
             ib_network_container.comment = desc
             ib_network_container.update()
-            print("The latest EA dictionary is :\n", ea_ex_dict)
-            print("The latest comment is :\n", ib_network_container.comment)
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
+            print("The latest comment for {} is :\n{}".format(nw, ib_network_container.comment))
         else:
             print("The existing comment for {} is as below , User Intervention is required. Moving the values to the UserIntervention.csv file.\n{}".format(nw, ib_network_container.comment))
             my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
@@ -58,7 +58,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 fieldnames = ['Network Container', 'Comment', 'Description']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)
-            print("The latest EA dictionary is :\n", ea_ex_dict)
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
     else:
         print("Description Exists for {}, User Intervention is required !!!".format(nw))
         desc = ea_ex_dict['Description']
@@ -69,7 +69,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 fieldnames = ['Network Container', 'Comment', 'Description']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)
-            print("The latest EA dictionary is :\n", ea_ex_dict)    
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))    
         elif re.search(r'^SVR',ib_network_container.comment,re.I):
             print("The existing comment for {} is as below , moving it to the Request number field. Moving the values to the UserIntervention.csv file.\n{}".format(nw, ib_network_container.comment))
             RQ_num = {'Request Number':ib_network_container.comment}
@@ -78,13 +78,12 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
             ib_network_container.extattrs = merged_ea
             ib_network_container.comment = ""
             ib_network_container.update()
-            print("The latest EA dictionary is :\n", ea_ex_dict)
             my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
             with open('UserIntervention.csv', 'a', newline='') as csv_file:
                 fieldnames = ['Network Container', 'Comment', 'Description']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)
-            print("The latest EA dictionary is :\n", ea_ex_dict)    
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))   
         else:
             print("The existing comment for {} is as below , moving the values to the UserIntervention.csv file.\n{}".format(nw, ib_network_container.comment))
             my_dict = {'Network Container':nw, 'Comment':ib_network_container.comment, 'Description':desc}
@@ -92,7 +91,7 @@ def NetworkContainer_Attribute(nw=str, exatt=str):
                 fieldnames = ['Network Container', 'Comment', 'Description']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 writer.writerow(my_dict)
-            print("The latest EA dictionary is :\n", ea_ex_dict)    
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))   
 
 with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
