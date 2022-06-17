@@ -101,5 +101,5 @@ with open('NetworkContainer.csv', newline='') as csv_file:
         NC = tmp["Network Container"]
         description_key = ['Description']
         desc = {k:tmp[k] for k in description_key if k in tmp}
-        NetworkContainer_Attribute(NC,desc)
+        NetworkContainer_Attribute(NC,desc1)
 
