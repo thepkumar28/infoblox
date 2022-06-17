@@ -17,25 +17,34 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def backup_Network_data(nw=str):
-    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    with open('backup_Network_data.txt', 'a') as f:
-        f.write(str(ib_network) + '\n')
-    return ib_network
+with open('backup_NetworkContainer_data.csv', 'w', newline='') as csv_file:
+    fieldnames = ['Comment', 'Network Container', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+
+#def backup_Network_data(nw=str):
+#    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
+#    with open('backup_Network_data.txt', 'a') as f:
+#        f.write(str(ib_network) + '\n')
+#    return ib_network
 
 def backup_NetworkContainer_data(nw=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    with open('backup_NetworkContainer_data.txt', 'a') as f:
-        f.write(str(ib_network_container) + '\n')
-    return ib_network_container
+    ea_ex_dict = ib_network_container.extattrs.ea_dict
+    comm = {'Comment':ib_network_container.comment}
+    my_dict = ea_ex_dict.update(comm)
+    with open('backup_NetworkContainer_data.csv', 'a', newline='') as csv_file:
+        fieldnames = ['Comment', 'Network Container', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writerow(my_dict)
 
-with open('Network.csv', newline='') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        tmp = (dict(row))
-        NW = tmp["Network"]
-        print (NW)
-        backup_Network_data(NW)
+#with open('Network.csv', newline='') as csv_file:
+#    csv_reader = csv.DictReader(csv_file)
+#    for row in csv_reader:
+#        tmp = (dict(row))
+#        NW = tmp["Network"]
+#        print (NW)
+#        backup_Network_data(NW)
 
 with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
