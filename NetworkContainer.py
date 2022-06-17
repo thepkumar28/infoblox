@@ -99,8 +99,7 @@ with open('NetworkContainer.csv', newline='') as csv_file:
     for row in csv_reader:
         tmp = (dict(row))
         NC = tmp["Network Container"]
-        desc = tmp["Description"]
-        #description_key = ['Description']
-        #desc = {k:tmp[k] for k in description_key if k in tmp}
+        description_key = ['Description']
+        desc = {k:tmp[k] for k in description_key if k in tmp}
         NetworkContainer_Attribute(NC,desc)
 
