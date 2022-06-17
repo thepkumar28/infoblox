@@ -32,11 +32,11 @@ def backup_NetworkContainer_data(nw=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     ea_ex_dict = ib_network_container.extattrs.ea_dict
     comm = {'Comment':ib_network_container.comment}
-    my_dict = ea_ex_dict.update(comm)
+    ea_ex_dict.update(comm)
     with open('backup_NetworkContainer_data.csv', 'a', newline='') as csv_file:
         fieldnames = ['Comment', 'Network Container', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writerow(my_dict)
+        writer.writerow(ea_ex_dict)
 
 #with open('Network.csv', newline='') as csv_file:
 #    csv_reader = csv.DictReader(csv_file)
