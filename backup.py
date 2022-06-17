@@ -18,7 +18,7 @@ def default_infoblox_connection():
 connection = default_infoblox_connection()
 
 with open('backup_NetworkContainer_data.csv', 'w', newline='') as csv_file:
-    fieldnames = ['Comment', 'Network Container', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+    fieldnames = ['Network Container', 'Comment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()
 
@@ -31,10 +31,10 @@ with open('backup_NetworkContainer_data.csv', 'w', newline='') as csv_file:
 def backup_NetworkContainer_data(nw=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
     ea_ex_dict = ib_network_container.extattrs.ea_dict
-    comm = {'Comment':ib_network_container.comment}
-    ea_ex_dict.update(comm)
+    tmp_dict = {'Comment':ib_network_container.comment, 'Network Container':nw}
+    ea_ex_dict.update(tmp_dict)
     with open('backup_NetworkContainer_data.csv', 'a', newline='') as csv_file:
-        fieldnames = ['Comment', 'Network Container', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+        fieldnames = ['Network Container', 'Comment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow(ea_ex_dict)
 
