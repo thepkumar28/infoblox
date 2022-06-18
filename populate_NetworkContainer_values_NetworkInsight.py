@@ -19,7 +19,7 @@ connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
-    unmanaged = ib_network_container.unmanaged
+    unmanaged = ib_network_container.unmanaged('false')
     #if ib_network_container.comment == None:
     #    ib_network_container.unmanaged('false')
     #    ib_network_container.comment = desc
