@@ -32,7 +32,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
 #
     #ib_network_container.update()
     print(ib_network_container)
-    print(unmanaged)
+    #print(unmanaged)
 
 populate_NetworkContainer_ExtensibleAttribute('10.48.196.0/22', 'Test comment', {'Description':'Test Description'})
 
