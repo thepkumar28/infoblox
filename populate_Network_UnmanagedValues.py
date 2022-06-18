@@ -19,7 +19,8 @@ connection = default_infoblox_connection()
 
 def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
-    #ib_network.unmanaged = False
+    # Converting the Unmanaged network to a Managed network and Making sure the Network is always managed.
+    ib_network.unmanaged = False
     ea_ex_dict = ib_network.extattrs.ea_dict
     #unmanaged = ib_network.unmanaged
     #if unmanaged == True:
@@ -37,7 +38,7 @@ def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
         ib_network.update()
         desc = ea_ex_dict['Description']
         if ib_network.comment == None:
-            print("Comment field is Empty for {}. Copying from UserInput !!!".format(nw))
+            print("Comment field is Empty for {}. Copying from Description !!!".format(nw))
             ib_network.comment = desc
             ib_network.update()
             print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
