@@ -22,7 +22,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     unmanaged = ib_network_container.unmanaged
     if unmanaged == True:
         print("The value of Unmanaged for {} is {} so converting it...".format(nw, unmanaged))
-        ib_network_container.unmanaged('false')
+        ib_network_container.unmanaged = False
         ib_network_container.update()
     else:
         print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
