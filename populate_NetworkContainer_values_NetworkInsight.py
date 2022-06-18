@@ -19,11 +19,12 @@ connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
+    #ib_network_container.unmanaged = True
     unmanaged = ib_network_container.unmanaged
     if unmanaged == True:
         print("The value of Unmanaged for {} is {} so converting it...".format(nw, unmanaged))
-        ib_network_container.unmanaged = False
-        ib_network_container.update()
+        #ib_network_container.unmanaged = False
+        #ib_network_container.update()
     else:
         print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
         
@@ -41,14 +42,14 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     #print(ib_network_container)
     
 
-#populate_NetworkContainer_ExtensibleAttribute('10.48.196.0/22', 'Test comment', {'Description':'Test Description'})
+populate_NetworkContainer_ExtensibleAttribute('10.48.196.0/22', 'Test comment', {'Description':'Test Description'})
 
-with open('NetworkContainer.csv', newline='') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        dict_NC = (dict(row))
-        NC = dict_NC["Network Container"]
-        Desc = dict_NC["Description"]
-        del dict_NC["Network Container"]
-        EA_dict_NC = dict_NC
-        populate_NetworkContainer_ExtensibleAttribute(NC,Desc,EA_dict_NC)
+#with open('NetworkContainer.csv', newline='') as csv_file:
+#    csv_reader = csv.DictReader(csv_file)
+#    for row in csv_reader:
+#        dict_NC = (dict(row))
+#        NC = dict_NC["Network Container"]
+#        Desc = dict_NC["Description"]
+#        del dict_NC["Network Container"]
+#        EA_dict_NC = dict_NC
+#        populate_NetworkContainer_ExtensibleAttribute(NC,Desc,EA_dict_NC)
