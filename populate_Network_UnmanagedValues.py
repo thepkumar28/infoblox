@@ -17,10 +17,10 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def populate_Network_ExtensibleAttribute(nw=str, comm=str, exatt=str):
+def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
     #ib_network.unmanaged = False
-    #ea_ex_dict = ib_network.extattrs.ea_dict
+    ea_ex_dict = ib_network.extattrs.ea_dict
     #unmanaged = ib_network.unmanaged
     #if unmanaged == True:
     #    print("The value of Unmanaged for {} is {} hence converting this Unmanaged network to a Managed network".format(nw, unmanaged))
@@ -29,28 +29,24 @@ def populate_Network_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     #else:
     #    print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
     #desc = ea_ex_dict['Description']
-    if ib_network.comment == None:
-        print("Comment field is Empty for {}. Copying from UserInput !!!".format(nw))
-        ib_network.comment = comm
+    if 'Description' not in ea_ex_dict:
+        print("Description doesn't Exist for {}. Copying the Description from LLD !!!".format(nw))
+        ea_ex_dict.update(exatt)
+        merged_ea = objects.EA(ea_ex_dict)
+        ib_network.extattrs = merged_ea
         ib_network.update()
-        print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
-        print("The latest comment for {} is :\n{}".format(nw, ib_network.comment))
+        desc = ea_ex_dict['Description']
+        if ib_network.comment == None:
+            print("Comment field is Empty for {}. Copying from UserInput !!!".format(nw))
+            ib_network.comment = desc
+            ib_network.update()
+            print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
+            print("The latest comment for {} is :\n{}".format(nw, ib_network.comment))
 
-
-    #if ib_network.comment == None:
-    #    ib_network.comment = desc
-    #    ib_network.update()
-#
-    #ea_dict = ib_network.extattrs.ea_dict
-    #ea_dict.update(exatt)
-    #merged_ea = objects.EA(ea_dict)
-    #ib_network.extattrs = merged_ea
-#
-    #ib_network.update()
     print(ib_network)
     
 
-populate_Network_ExtensibleAttribute('192.0.2.0/24', 'Test comment', {'Description':'Test Description'})
+populate_Network_ExtensibleAttribute('192.0.2.0/24', {'Description':'Test Description'})
 
 #with open('NetworkContainer.csv', newline='') as csv_file:
 #    csv_reader = csv.DictReader(csv_file)
