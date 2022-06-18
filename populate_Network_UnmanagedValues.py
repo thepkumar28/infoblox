@@ -30,7 +30,7 @@ def populate_Network_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     #    print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
     #desc = ea_ex_dict['Description']
     if ib_network.comment == None:
-        print("Comment field is Empty for {}. Copying from Description !!!".format(nw))
+        print("Comment field is Empty for {}. Copying from UserInput !!!".format(nw))
         ib_network.comment = comm
         ib_network.update()
         print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
