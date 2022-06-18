@@ -17,7 +17,7 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def populate_Network_ExtensibleAttribute(nw=str, desc=str, exatt=str):
+def populate_Network_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
     #ib_network.unmanaged = False
     unmanaged = ib_network.unmanaged
@@ -27,18 +27,20 @@ def populate_Network_ExtensibleAttribute(nw=str, desc=str, exatt=str):
         #ib_network.update()
     else:
         print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
-        
-    #if ib_network_container.comment == None:
-    #    ib_network_container.unmanaged('false')
-    #    ib_network_container.comment = desc
-    #    ib_network_container.update()
+
+    ib_network.comment = comm
+    ib_network.update()
+
+    #if ib_network.comment == None:
+    #    ib_network.comment = desc
+    #    ib_network.update()
 #
-    #ea_dict = ib_network_container.extattrs.ea_dict
+    #ea_dict = ib_network.extattrs.ea_dict
     #ea_dict.update(exatt)
     #merged_ea = objects.EA(ea_dict)
-    #ib_network_container.extattrs = merged_ea
+    #ib_network.extattrs = merged_ea
 #
-    #ib_network_container.update()
+    #ib_network.update()
     print(ib_network)
     
 
