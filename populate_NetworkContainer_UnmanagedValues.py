@@ -19,12 +19,11 @@ connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
-    ib_network_container.unmanaged = True
     unmanaged = ib_network_container.unmanaged
     if unmanaged == True:
         print("The value of Unmanaged for {} is {} so converting it...".format(nw, unmanaged))
-        #ib_network_container.unmanaged = False
-        #ib_network_container.update()
+        ib_network_container.unmanaged = False
+        ib_network_container.update()
     else:
         print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
         
