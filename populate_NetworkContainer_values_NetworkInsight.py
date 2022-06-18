@@ -19,17 +19,17 @@ connection = default_infoblox_connection()
 
 def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    if ib_network_container.comment == None:
-        ib_network_container.unmanaged('false')
-        ib_network_container.comment = desc
-        ib_network_container.update()
-
-    ea_dict = ib_network_container.extattrs.ea_dict
-    ea_dict.update(exatt)
-    merged_ea = objects.EA(ea_dict)
-    ib_network_container.extattrs = merged_ea
-
-    ib_network_container.update()
+    #if ib_network_container.comment == None:
+    #    ib_network_container.unmanaged('false')
+    #    ib_network_container.comment = desc
+    #    ib_network_container.update()
+#
+    #ea_dict = ib_network_container.extattrs.ea_dict
+    #ea_dict.update(exatt)
+    #merged_ea = objects.EA(ea_dict)
+    #ib_network_container.extattrs = merged_ea
+#
+    #ib_network_container.update()
     print(ib_network_container)
 
 populate_NetworkContainer_ExtensibleAttribute('10.48.196.0/22', 'Test comment', {'Description':'Test Description'})
