@@ -47,7 +47,7 @@ def populate_Network_ExtensibleAttribute(nw=str, exatt=str):
     print(ib_network)
     
 
-populate_Network_ExtensibleAttribute('192.0.2.0/24', {'Description':'Test Description'})
+populate_Network_ExtensibleAttribute('131.226.217.128/27', {'Description':'Test Description'})
 
 #with open('NetworkContainer.csv', newline='') as csv_file:
 #    csv_reader = csv.DictReader(csv_file)
