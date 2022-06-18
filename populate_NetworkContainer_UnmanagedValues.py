@@ -21,7 +21,7 @@ def populate_NetworkContainer_ExtensibleAttribute(nw=str, desc=str, exatt=str):
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
     unmanaged = ib_network_container.unmanaged
     if unmanaged == True:
-        print("The value of Unmanaged for {} is {} so converting it...".format(nw, unmanaged))
+        print("The value of Unmanaged for {} is {} hence converting this Unmanaged network to a Managed network".format(nw, unmanaged))
         ib_network_container.unmanaged = False
         ib_network_container.update()
     else:
