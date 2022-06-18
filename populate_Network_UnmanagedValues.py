@@ -20,16 +20,22 @@ connection = default_infoblox_connection()
 def populate_Network_ExtensibleAttribute(nw=str, comm=str, exatt=str):
     ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
     #ib_network.unmanaged = False
-    unmanaged = ib_network.unmanaged
-    if unmanaged == True:
-        print("The value of Unmanaged for {} is {} hence converting this Unmanaged network to a Managed network".format(nw, unmanaged))
-        #ib_network.unmanaged = False
-        #ib_network.update()
-    else:
-        print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
+    #ea_ex_dict = ib_network.extattrs.ea_dict
+    #unmanaged = ib_network.unmanaged
+    #if unmanaged == True:
+    #    print("The value of Unmanaged for {} is {} hence converting this Unmanaged network to a Managed network".format(nw, unmanaged))
+    #    #ib_network.unmanaged = False
+    #    #ib_network.update()
+    #else:
+    #    print("The value of Unmanaged for {} is {}".format(nw, unmanaged))
+    #desc = ea_ex_dict['Description']
+    if ib_network.comment == None:
+        print("Comment field is Empty for {}. Copying from Description !!!".format(nw))
+        ib_network.comment = comm
+        ib_network.update()
+        print("The latest EA dictionary for {} is :\n{}".format(nw, ea_ex_dict))
+        print("The latest comment for {} is :\n{}".format(nw, ib_network.comment))
 
-    ib_network.comment = comm
-    ib_network.update()
 
     #if ib_network.comment == None:
     #    ib_network.comment = desc
