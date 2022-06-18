@@ -1,3 +1,4 @@
 Network Container,Description
 131.226.192.0/18,Dev Network Container - Used for testing scripts as part of the IPAM Project
 10.48.192.0/19,E3 NSO Lab
+10.48.196.0,Network Insight
