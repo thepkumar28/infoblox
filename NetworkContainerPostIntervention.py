@@ -33,7 +33,7 @@ if os.path.exists('UserIntervention.csv') == True:
         ib_network_container.extattrs = merged_ea
         ib_network_container.update()
 
-        print("Updated the the values for {} as mentioned in UserIntervention.csv file".format(nw))
+        print("Updated the the values for {} as mentioned in the UserIntervention.csv file".format(nw))
 
     with open('UserIntervention.csv', newline='') as csv_file:
         csv_reader = csv.DictReader(csv_file)
