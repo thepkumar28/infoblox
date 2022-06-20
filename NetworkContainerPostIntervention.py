@@ -21,5 +21,19 @@ if os.path.exists('UserIntervention.csv') == True:
         return conn
     connection = default_infoblox_connection()
 
+    def NetworkContainer_Attribute_PostIntervention(nw=str, comm=str, desc=str):
+        ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs', 'unmanaged'])
+        
+
+    with open('UserIntervention.csv', newline='') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for row in csv_reader:
+            tmp = (dict(row))
+            print(tmp)
+            #NC = tmp["Network Container"]
+            #description_key = ['Description']
+            #desc = {k:tmp[k] for k in description_key if k in tmp}
+            #NetworkContainer_Attribute_PostIntervention(NC,desc)    
+
 else:
     print("Please run NetworkContainer.py first , then execute this script !!!")    
