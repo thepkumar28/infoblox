@@ -114,4 +114,4 @@ if os.path.exists('backup_NetworkContainer_data.csv') == True:
             NetworkContainer_Attribute(NC,desc)
 
 else:
-    print("Please run the backup.py script first , then execute this script !!!")
+    print("Please run the backup_NetworkContainer_data.py script first , then execute this script !!!")
