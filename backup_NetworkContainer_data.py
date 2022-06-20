@@ -2,8 +2,8 @@
 
 import sys
 import csv
-import logging
-logging.basicConfig(level=logging.DEBUG)
+#import logging
+#logging.basicConfig(level=logging.DEBUG)
 
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -31,11 +31,12 @@ def backup_NetworkContainer_data(nw=str):
         fieldnames = ['Network Container', 'Comment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow(ea_ex_dict)
+    print("Backed up {}".format(nw))   
 
 with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         tmp = (dict(row))
         NC = tmp["Network Container"]
-        print (NC)
+        #print (NC)
         backup_NetworkContainer_data(NC)
