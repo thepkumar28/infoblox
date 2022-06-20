@@ -31,6 +31,7 @@ def backup_Network_data(nw=str):
         fieldnames = ['Network', 'Comment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow(ea_ex_dict)
+    print("Backed up {}".format(nw))    
 
 with open('Network.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
