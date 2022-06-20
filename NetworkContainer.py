@@ -31,8 +31,11 @@ if os.path.exists('backup_NetworkContainer_data.csv') == True:
         
         # Converting the Unmanaged network to a Managed network and Making sure the Network is always managed.
         
-        ib_network_container.unmanaged = False
-        ib_network_container.update()
+        unmanaged = ib_network_container.unmanaged
+        if unmanaged == True:
+            print("The value of Unmanaged for {} is {} hence converting this Unmanaged network to a Managed network".format(nw, unmanaged))
+            ib_network_container.unmanaged = False
+            ib_network_container.update()
 
         ea_ex_dict = ib_network_container.extattrs.ea_dict
     
