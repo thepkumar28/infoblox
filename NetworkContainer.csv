@@ -1,4 +1,248 @@
 Network Container,Description
-131.226.192.0/18,Dev Network Container - Used for testing scripts as part of the IPAM Project
-10.48.192.0/19,E3 NSO Lab
-10.48.196.0/22,E3 NSO Lab (Stores)
+10.2.0.0/16,Secure Core EC Overlay
+10.4.0.0/16,Secure Core EC Non-Prod
+10.6.0.0/16,Secure Core EC UAT
+10.114.0.0/18,Secure Core EC eDMZ Services
+10.114.128.0/18,Secure Core EC iDMZ Services
+10.166.28.0/23,Secure Core EC iDMZ
+10.166.56.0/23,Secure Core EC eDMZ
+10.3.0.0/16,Secure Core EQ Overlay
+10.5.0.0/16,Secure Core EQ Non-Prod
+10.7.0.0/16,Secure Core EQ UAT
+10.30.28.0/23,Secure Core EQ iDMZ
+10.30.56.0/23,Secure Core EQ eDMZ
+10.115.0.0/18,Secure Core EQ eDMZ Services
+10.115.128.0/18,Secure Core EQ iDMZ Services
+10.166.0.0/16,Infrastructure Interconnects & Management Zone
+10.167.0.0/16,Server VIPs (Prod & DR)
+10.168.0.0/16,Production Server Ranges
+10.169.0.0/16,DR Server Ranges
+10.170.0.0/16,NP Server Ranges (Non-Prod - Previously DR IO)
+10.171.0.0/16,iLO & Deployment Networks (Prod & DR)
+10.172.0.0/16,Future Backup Networks (Prod & DR)
+10.173.0.0/16,Partner VPN NAT Ranges
+10.30.0.0/16,Infrastructure Interconnects & Management Zone
+10.31.0.0/16,Server VIPs (Prod & DR)
+10.74.0.0/16,Production Server Ranges
+10.75.0.0/16,DR Server Ranges
+10.76.0.0/16,NP Server Ranges (Non-Prod - Previously DR IO)
+10.77.0.0/16,Partner VPN NAT Ranges
+10.202.0.0/16,Future Backup Networks (Prod & DR)
+10.203.0.0/16,iLO & Deployment Networks (Prod & DR)
+10.134.0.0/16,Infrastructure Interconnects & Management Zone
+10.135.0.0/16,Server VIPs (Prod & DR)
+10.136.0.0/16,Production Server Ranges
+10.137.0.0/16,DR Server Ranges
+10.138.0.0/16,NP Server Ranges (Non-Prod - Previously DR IO)
+10.139.0.0/16,iLO & Deployment Networks (Prod & DR)
+10.140.0.0/16,Future Backup Networks (Prod & DR)
+10.141.0.0/16,Partner VPN NAT Ranges
+10.232.0.0/16,AUS IPTEL Enterprise - Major Sites - SLDC
+10.232.68.0/23,
+10.53.0.0/16,Legacy Server Farm
+10.55.176.0/22,
+10.55.220.0/22,
+10.55.236.0/22,
+10.55.240.0/22,
+10.56.0.0/16,
+10.57.0.0/16,
+192.168.0.0/16,Legacy DMZ
+172.16.30.0/24,Firewall NATS
+172.17.5.0/28,Firewall NATS
+172.17.5.128/28,Firewall NATS
+172.17.9.0/24,Firewall NATS
+172.18.0.0/19,RAS Firewall NAT Pool
+172.21.250.1/32,Firewall NATS
+172.22.250.1/32,Firewall NATS
+172.23.0.0/16,Caltex Alliance Sites
+172.24.0.0/16,Caltex Alliance Sites
+172.26.64.64/29,RAS & Mobile User Ranges
+172.26.64.72/29,RAS & Mobile User Ranges
+172.26.65.0/24,RAS & Mobile User Ranges
+172.26.66.0/24,RAS & Mobile User Ranges
+172.26.67.0/24,RAS & Mobile User Ranges
+172.26.68.0/24,RAS & Mobile User Ranges
+172.26.70.0/23,RAS & Mobile User Ranges
+172.26.72.0/23,RAS & Mobile User Ranges
+172.26.76.0/22,RAS & Mobile User Ranges
+172.27.0.0/20,DMZ Range
+172.27.246.0/24,DMZ Range
+172.27.247.0/24,DMZ Range
+172.27.247.32/27,DMZ Range
+172.28.1.0/24,Firewall NATS
+172.30.112.0/24,Firewall NATS
+172.31.68.0/24,Firewall NATS
+172.31.69.0/24,Firewall NATS
+172.31.72.0/24,Firewall NATS
+10.23.128.0/17,Norwest SF5
+10.47.208.0/24,
+10.88.2.0/24,
+10.25.0.0/22,Norwest Layer 4-7 Load Balancing
+10.8.0.0/22,EMC Avatar Grid 1&2
+10.8.4.0/23,EMC Avatar Grid 1&2
+10.19.12.0/24,
+10.19.14.0/24,
+172.29.128.0/18,
+10.47.196.0/24,
+10.166.128.0/17,
+10.166.190.0/24,
+10.171.0.0/18,
+10.171.64.0/19,
+10.171.96.0/19,
+10.171.128.0/19,
+10.171.160.0/19,
+10.171.192.0/19,
+10.30.128.0/17,
+10.30.190.0/24,
+10.203.0.0/18,
+10.203.64.0/19,
+10.203.96.0/19,
+10.203.128.0/19,
+10.203.160.0/19,
+10.203.192.0/19,
+10.134.128.0/17,
+10.139.0.0/18,
+10.139.64.0/19,
+10.139.96.0/19,
+10.139.128.0/19,
+10.139.160.0/19,
+10.139.192.0/19,
+10.23.0.0/17,Norwest EFT Switch Prod & Non-Prod Environments
+10.24.0.0/17,PDC EFT Switch Prod & Non-Prod Environments
+10.124.0.0,
+10.125.0.0,
+10.116.0.0/16,DPC EQ
+10.122.0.0/16,DPC EQ
+10.152.0.0/16,DPC EC
+10.154.0.0/16,DPC EC
+10.12.0.0/17,WoW Azure Australia South East (Melbourne)
+10.17.0.0/16,WoW Azure Australia East (Sydney)
+10.29.0.0/16,
+10.18.0.0/16,WoW GCP
+10.15.0.0/22,WoW SAP HEC Subnet1
+10.15.255.0/24,WoW SAP HEC Subnet2
+10.16.0.0/16,WoW AWS IP Subnet1
+10.26.0.0/17,WoW AWS IP Subnet2
+10.253.0.0/19,WoW Big-W IP Subnet
+10.166.63.64/28,Corporate WLC Management Eastern Creek
+10.166.63.80/28,Logistics WLC Eastern Creek
+10.166.63.96/27,Stores WLC Eastern Creek
+10.134.63.64/28,Corporate WLC Management Norwest
+10.134.63.80/28,Logistics WLC Norwest
+10.134.63.96/27,Stores WLC Norwest
+10.114.152.0/27,
+10.115.152.0/27,
+10.152.52.0/14,
+10.116.52.0/14,
+10.152.12.0/24,
+10.116.12.0/24,
+10.152.16.0/13,
+10.116.16.0/13,
+10.116.0.0/16,EQDC - WHS (Woolworths Hosted Systems)
+10.152.0.0/16,ECDC - WHS (Woolworths Hosted Systems)
+10.152.28.0/22,
+10.116.28.0/22,
+10.15.4.0/22,SAP Co-Location (Data Provisioning)
+10.15.8.0/22,SAP Co-Location (User)
+10.15.12.0/22,SAP Co-Location (Replication)
+10.15.16.0/22,SAP Co-Location (Backup)
+10.15.20.0/21,SAP Co-Location (Management)
+10.32.0.0/12,Stores NSW+ACT
+10.64.0.0/13,Stores QLD
+10.96.0.0/13,Stores VIC
+10.108.0.0/15,Stores VIC
+10.128.0.0/14,Stores WA
+10.132.0.0/16,Stores WA
+10.160.0.0/14,Stores SA + NT
+10.164.0.0/15,Stores SA + NT
+10.224.0.0/15,Stores TAS
+10.83.0.0/16,All BWS sites within all states
+10.147.0.0/16,All BWS sites within all states
+10.148.0.0/16,All BWS sites within all states
+10.179.0.0/16,All BWS sites within all states
+10.243.0.0/16,All BWS sites within all states
+10.55.0.0/16,Big W NSW + ACT sites
+10.59.128.0/17,Big W NSW + ACT sites
+10.87.0.0/16,Big W QLD sites
+10.119.0.0/16,Big W VIC sites
+10.151.0.0/16,Big W WA sites
+10.183.0.0/16,Big W SA + NT sites
+10.247.0.0/18,Big W TAS sites
+10.192.0.0/14,ALH sites
+10.196.0.0/15,ALH sites
+10.199.0.0/16,ALH sites
+10.0.0.0/16,IPEVO WAN & Loopback Allocations
+10.0.64.0/20,WAN addresses NSW + ACT
+10.0.80.0/21,WAN addresses QLD
+10.0.88.0/24,WAN addresses QLD
+10.0.89.0/24,WAN addresses VIC
+10.0.90.0/23,WAN addresses VIC
+10.0.92.0/22,WAN addresses VIC
+10.0.96.0/22,WAN addresses VIC
+10.0.100.0/23,WAN addresses VIC
+10.0.102.0/24,WAN addresses VIC
+10.0.103.0/24,WAN addresses WA
+10.0.104.0/22,WAN addresses WA
+10.0.108.0/22,WAN addresses SA + NT
+10.0.112.0/23,WAN addresses SA + NT
+10.0.114.0/24,WAN addresses TAS
+10.0.116.0/22,WAN addresses any
+10.0.136.0/22,WAN addresses any
+10.0.192.0/21,WAN addresses any
+10.0.206.0/23,WAN addresses any
+10.47.208.0/23,Supermarket Infra LAB (Platinum) - CAB 9
+10.47.210.128/25,Supermarket Infra LAB (Platinum) - CAB 9
+10.47.211.0/25,Supermarket Infra LAB (Platinum) - CAB 9
+10.47.211.64/26,Supermarket Infra LAB (Platinum) - CAB 9
+10.226.45.0/25,Supermarket Infra LAB (Platinum) - CAB 9
+172.20.20.0/24,Supermarket Infra LAB (Platinum) - CAB 9
+172.20.30.0/24,Supermarket Infra LAB (Platinum) - CAB 9
+10.33.60.0/23,BigW Infra Lab (Platium) - CAB 9
+10.33.62.0/24,BigW Infra Lab (Platium) - CAB 9
+10.42.20.0/24,BigW Infra Lab (Platium) - CAB 9
+10.228.1.0/25,BigW Infra Lab (Platium) - CAB 9
+172.20.20.0/24,BigW Infra Lab (Platium) - CAB 9
+172.20.30.0/24,BigW Infra Lab (Platium) - CAB 9
+192.168.1.0/24,BigW Infra Lab (Platium) - CAB 9
+10.225.20.0/24,Standalone Infra Lab (Gold)
+10.225.48.0/24,Standalone Infra Lab (Gold)
+10.225.49.254,Standalone Infra Lab (Gold)
+10.225.51.0/24,Standalone Infra Lab (Gold)
+10.225.52.0/23,Standalone Infra Lab (Gold)
+10.225.54.0/24,Standalone Infra Lab (Gold)
+10.225.55.0/25,Standalone Infra Lab (Gold)
+10.227.175.0/25,Standalone Infra Lab (Gold)
+10.228.203.0/25,Standalone Infra Lab (Gold)
+10.40.212.0/24,(DM) Infra Lab - CAB5
+10.227.63.0/25,(DM) Infra Lab - CAB5
+10.40.215.252/29,(DM) Infra Lab - CAB5
+10.40.214.128/25,(DM) Infra Lab - CAB5
+10.32.32.0/23,Metro Standalone Infra Lab
+10.226.206.0/25,Metro Standalone Infra Lab
+10.32.35.252/29,Metro Standalone Infra Lab
+10.32.34.128/25,Metro Standalone Infra Lab
+10.47.208.128/25,SIE Infra Lab Topology
+10.55.237.0/24,SIE Infra Lab Topology
+10.55.238.0/23,SIE Infra Lab Topology
+10.55.241.0/24,SIE Infra Lab Topology
+10.55.176.0/23,SIE Infra Lab Topology
+10.55.178.0/24,SIE Infra Lab Topology
+10.55.220.0/24,SIE Infra Lab Topology
+10.55.223.0/24,SIE Infra Lab Topology
+10.48.193.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.48.194.0/23,Infra Lan CAB 8/9/10 (Dev)
+10.48.196.0/22,Infra Lan CAB 8/9/10 (Dev)
+10.48.200.0/23,Infra Lan CAB 8/9/10 (Dev)
+10.48.202.0/24,Infra Lan CAB 8/9/10 (Dev)
+192.168.226.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.32.7.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.32.5.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.208.52.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.42.24.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.42.48.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.48.209.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.48.210.0/23,Infra Lan CAB 8/9/10 (Dev)
+10.48.212.0/22,Infra Lan CAB 8/9/10 (Dev)
+10.48.216.0/23,Infra Lan CAB 8/9/10 (Dev)
+10.48.218.0/24,Infra Lan CAB 8/9/10 (Dev)
+10.42.12.0/22,VCI/Logistics Infra Lab
