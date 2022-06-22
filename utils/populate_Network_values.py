@@ -17,25 +17,25 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def populate_Network_ExtensibleAttribute(nw=str, desc=str, exatt=str):
-    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    if ib_network.comment == None:
-        ib_network.comment = desc
-        ib_network.update()
+#def populate_Network_ExtensibleAttribute(nw=str, desc=str, exatt=str):
+#    ib_network = objects.Network.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
+#    if ib_network.comment == None:
+#        ib_network.comment = desc
+#        ib_network.update()
+#
+#    ea_dict = ib_network.extattrs.ea_dict
+#    ea_dict.update(exatt)
+#    merged_ea = objects.EA(ea_dict)
+#    ib_network.extattrs = merged_ea
+#    ib_network.update()
+#    print(ib_network)
 
-    ea_dict = ib_network.extattrs.ea_dict
-    ea_dict.update(exatt)
-    merged_ea = objects.EA(ea_dict)
-    ib_network.extattrs = merged_ea
-    ib_network.update()
-    print(ib_network)
-
-with open('Network.csv', newline='') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        dict_NW = (dict(row))
-        NW = dict_NW["Network"]
-        Desc = dict_NW["Description"]
-        del dict_NW["Network"]
-        EA_dict_NW = dict_NW
-        populate_Network_ExtensibleAttribute(NW,Desc,EA_dict_NW)
+#with open('Network.csv', newline='') as csv_file:
+#    csv_reader = csv.DictReader(csv_file)
+#    for row in csv_reader:
+#        dict_NW = (dict(row))
+#        NW = dict_NW["Network"]
+#        Desc = dict_NW["Description"]
+#        del dict_NW["Network"]
+#        EA_dict_NW = dict_NW
+#        populate_Network_ExtensibleAttribute(NW,Desc,EA_dict_NW)

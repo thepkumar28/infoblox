@@ -17,12 +17,12 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
-    ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    ib_network_container.comment = comm
-    ea = objects.EA(exatt)
-    ib_network_container.extattrs = ea
-    ib_network_container.update()
-    print(ib_network_container)
-
-populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
+#def populate_NetworkContainer_ExtensibleAttribute(nw=str, comm=str, exatt=str):
+#    ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
+#    ib_network_container.comment = comm
+#    ea = objects.EA(exatt)
+#    ib_network_container.extattrs = ea
+#    ib_network_container.update()
+#    print(ib_network_container)
+#
+#populate_NetworkContainer_ExtensibleAttribute('131.226.192.0/18', 'Dev Network Container Used for testing scripts as part of the IPAM Project', {'Description': 'This is my test container description', 'Environment': 'Test'})
