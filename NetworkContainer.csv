@@ -3,7 +3,6 @@ Network Container,Description
 10.4.0.0/16,Secure Core EC Non-Prod
 10.6.0.0/16,Secure Core EC UAT
 10.114.0.0/18,Secure Core EC eDMZ Services
-10.114.128.0/18,Secure Core EC iDMZ Services
 10.166.28.0/23,Secure Core EC iDMZ
 10.166.56.0/23,Secure Core EC eDMZ
 10.3.0.0/16,Secure Core EQ Overlay
