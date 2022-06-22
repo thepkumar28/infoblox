@@ -28,5 +28,5 @@ def get_network_values(nw=str):
     #                              for element in EA_N.split(',')))
     return EA_dict_N , comment
 
-converted_Network_data = get_network_values('131.226.217.128/27')
+converted_Network_data = get_network_values('10.114.128.0/18')
 print("Network Values :\n", converted_Network_data)
