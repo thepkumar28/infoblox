@@ -27,7 +27,7 @@ def get_network_container_values(nw=str):
     #                 for a, b in (element.split('=')  
     #                              for element in EA_NC.split(',')))
     #return EA_dict_NC , comment
-    print(ib_network_container)
+    return ib_network_container
 
 converted_NetworkContainer_data = get_network_container_values('10.114.128.0/18')
 print('Network Container Values :\n', converted_NetworkContainer_data)
