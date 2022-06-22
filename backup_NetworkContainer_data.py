@@ -18,7 +18,7 @@ def default_infoblox_connection():
 connection = default_infoblox_connection()
 
 with open('backup_NetworkContainer_data.csv', 'w', newline='') as csv_file:
-    fieldnames = ['Network Container', 'Comment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+    fieldnames = ['Network Container', 'Comment', 'Alignment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
     writer.writeheader()
 
@@ -28,7 +28,7 @@ def backup_NetworkContainer_data(nw=str):
     tmp_dict = {'Comment':ib_network_container.comment, 'Network Container':nw}
     ea_ex_dict.update(tmp_dict)
     with open('backup_NetworkContainer_data.csv', 'a', newline='') as csv_file:
-        fieldnames = ['Network Container', 'Comment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+        fieldnames = ['Network Container', 'Comment', 'Alignment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow(ea_ex_dict)
     print("Backed up {}".format(nw))   
