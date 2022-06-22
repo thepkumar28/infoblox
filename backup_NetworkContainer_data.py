@@ -25,8 +25,8 @@ with open('backup_NetworkContainer_data.csv', 'w', newline='') as csv_file:
 def backup_NetworkContainer_data(nw=str):
     print("Now Backing up {}".format(nw))
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    if ib_network_container.extattrs == None:
-        print("Extensible Attributes don't exist for {}".format(nw))
+    if ib_network_container == None:
+        print("{} is not found".format(nw))
     else:    
         ea_ex_dict = ib_network_container.extattrs.ea_dict
         tmp_dict = {'Comment':ib_network_container.comment, 'Network Container':nw}
