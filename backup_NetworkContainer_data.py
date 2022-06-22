@@ -25,14 +25,17 @@ with open('backup_NetworkContainer_data.csv', 'w', newline='') as csv_file:
 def backup_NetworkContainer_data(nw=str):
     print("Now Backing up {}".format(nw))
     ib_network_container = objects.NetworkContainer.search(connection, network=nw, network_view='default', return_fields=['default', 'extattrs'])
-    ea_ex_dict = ib_network_container.extattrs.ea_dict
-    tmp_dict = {'Comment':ib_network_container.comment, 'Network Container':nw}
-    ea_ex_dict.update(tmp_dict)
-    with open('backup_NetworkContainer_data.csv', 'a', newline='') as csv_file:
-        fieldnames = ['Network Container', 'Comment', 'Alignment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writerow(ea_ex_dict)
-    print("Backed up {}".format(nw))   
+    if ib_network_container.extattrs == None:
+        print("Extensible Attributes don't exist for {}".format(nw))
+    else:    
+        ea_ex_dict = ib_network_container.extattrs.ea_dict
+        tmp_dict = {'Comment':ib_network_container.comment, 'Network Container':nw}
+        ea_ex_dict.update(tmp_dict)
+        with open('backup_NetworkContainer_data.csv', 'a', newline='') as csv_file:
+            fieldnames = ['Network Container', 'Comment', 'Alignment', 'Banner', 'Building', 'Country', 'Delivery Channel', 'Description', 'Environment', 'Location-Suburb', 'Operational State', 'Partner', 'Product Owner', 'Region', 'Request Number', 'Service Owner', 'Site', 'Site ID', 'Site Type', 'Source Firewall', 'State', 'VLAN', 'VLAN Name', 'Zone']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writerow(ea_ex_dict)
+        print("Backed up {}".format(nw))
 
 with open('NetworkContainer.csv', newline='') as csv_file:
     csv_reader = csv.DictReader(csv_file)
