@@ -48,8 +48,8 @@ def connect_to_host(host):
     # Use TextFSM to retrieve structured data
         hostname = host["host"]
         tmp = net_connect.send_command(command, use_textfsm=True)
-        ip_address = tmp[0]["ip_address"]
-        print("Output for the host {} is :\n{}".format(hostname,ip_address))
+        #ip_address = tmp[0]["ip_address"]
+        print("Output for the host {} is :\n{}".format(hostname,tmp))
 
 
 #def create_Host():
