@@ -18,28 +18,6 @@ def default_infoblox_connection():
     return conn
 connection = default_infoblox_connection()
 
-def connect_to_host():
-        host1 = {
-        "device_type": "cisco_ios",
-        "host": "sandbox-iosxr-1.cisco.com",
-        "username": "admin",
-        "password": "C1sco12345",
-    }
-        host2 = {
-        "device_type": "cisco_ios",
-        "host": "sandbox-nxos-1.cisco.com",
-        "username": "admin",
-        "password": "Admin_1234!",
-    }
-        host3 = {
-        "device_type": "cisco_ios",
-        "host": "sandbox-iosxe-latest-1.cisco.com",
-        "username": "developer",
-        "password": "C1sco12345",
-    }
-
-#def create_Host():
-
 host_list = [
     {
         "device_type": "cisco_ios",
@@ -47,7 +25,7 @@ host_list = [
         "username": "admin",
         "password": "C1sco12345",
     },
-    
+
     {
         "device_type": "cisco_ios",
         "host": "sandbox-nxos-1.cisco.com",
@@ -63,4 +41,12 @@ host_list = [
     }
 ]
 
-print(host_list)
+#def connect_to_host():
+
+
+#def create_Host():
+
+for host in host_list:
+    print(host)
+
+#print(host_list)
