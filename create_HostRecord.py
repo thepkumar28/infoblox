@@ -41,19 +41,21 @@ def connect_to_host():
 #def create_Host():
 
 host_list = [
-    host1 = {
+    {
         "device_type": "cisco_ios",
         "host": "sandbox-iosxr-1.cisco.com",
         "username": "admin",
         "password": "C1sco12345",
-    }
-    host2 = {
+    },
+    
+    {
         "device_type": "cisco_ios",
         "host": "sandbox-nxos-1.cisco.com",
         "username": "admin",
         "password": "Admin_1234!",
-    }
-    host3 = {
+    },
+
+    {
         "device_type": "cisco_ios",
         "host": "sandbox-iosxe-latest-1.cisco.com",
         "username": "developer",
