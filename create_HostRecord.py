@@ -41,12 +41,19 @@ host_list = [
     }
 ]
 
-#def connect_to_host():
+command = "show interface"
+
+def connect_to_host(host):
+    with ConnectHandler(**host) as net_connect:
+    # Use TextFSM to retrieve structured data
+        output = net_connect.send_command(command, use_textfsm=True)
+        print("Output for the host {} is :\n{}".format(host,output))
 
 
 #def create_Host():
 
 for host in host_list:
     print(host)
+    connect_to_host(host)
 
 #print(host_list)
