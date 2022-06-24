@@ -2,8 +2,8 @@
 
 import sys
 
-import logging
-logging.basicConfig(level=logging.DEBUG)
+#import logging
+#logging.basicConfig(level=logging.DEBUG)
 
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -19,20 +19,20 @@ def default_infoblox_connection():
 connection = default_infoblox_connection()
 
 host_list = [
-    {
-        "device_type": "cisco_ios",
-        "host": "sandbox-iosxr-1.cisco.com",
-        "username": "admin",
-        "password": "C1sco12345",
-    },
-
-    {
-        "device_type": "cisco_ios",
-        "host": "sandbox-nxos-1.cisco.com",
-        "username": "admin",
-        "password": "Admin_1234!",
-    },
-
+    #{
+    #    "device_type": "cisco_ios",
+    #    "host": "sandbox-iosxr-1.cisco.com",
+    #    "username": "admin",
+    #    "password": "C1sco12345",
+    #},
+#
+    #{
+    #    "device_type": "cisco_ios",
+    #    "host": "sandbox-nxos-1.cisco.com",
+    #    "username": "admin",
+    #    "password": "Admin_1234!",
+    #},
+#
     {
         "device_type": "cisco_ios",
         "host": "sandbox-iosxe-latest-1.cisco.com",
@@ -46,8 +46,9 @@ command = "show interface"
 def connect_to_host(host):
     with ConnectHandler(**host) as net_connect:
     # Use TextFSM to retrieve structured data
-        output = net_connect.send_command(command, use_textfsm=True)
-        print("Output for the host {} is :\n{}".format(host,output))
+        tmp = net_connect.send_command(command, use_textfsm=True)
+        ip_address = tmp[0]["ip_address"]
+        print("Output for the host {} is :\n{}".format(host,ip_address))
 
 
 #def create_Host():
