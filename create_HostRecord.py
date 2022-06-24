@@ -26,12 +26,12 @@ host_list = [
         "password": "C1sco12345",
     },
 
-    #{
-    #    "device_type": "cisco_ios",
-    #    "host": "sandbox-nxos-1.cisco.com",
-    #    "username": "admin",
-    #    "password": "Admin_1234!",
-    #},
+    {
+        "device_type": "cisco_nxos",
+        "host": "sandbox-nxos-1.cisco.com",
+        "username": "admin",
+        "password": "Admin_1234!",
+    },
 
     {
         "device_type": "cisco_ios",
