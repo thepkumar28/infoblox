@@ -27,7 +27,7 @@ host_list = [
     }
 ]
 
-command = "show interface"
+command = "show ip interface brief vrf all"
 
 def connect_to_host(host):
     with ConnectHandler(**host) as net_connect:
