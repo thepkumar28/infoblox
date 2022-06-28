@@ -12,11 +12,11 @@ from infoblox_client.connector import Connector
 from infoblox_client import objects
 from netmiko import ConnectHandler
 
-def default_infoblox_connection():
-    opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
-    conn = Connector(opts)
-    return conn
-connection = default_infoblox_connection()
+#def default_infoblox_connection():
+#    opts = {'host': 'ipam.woolworths.com.au', 'wapi_version':'2.10', 'username': sys.argv[1], 'password': sys.argv[2]}
+#    conn = Connector(opts)
+#    return conn
+#connection = default_infoblox_connection()
 
 host_list = [
     {
