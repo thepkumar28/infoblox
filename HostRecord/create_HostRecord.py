@@ -19,12 +19,12 @@ from netmiko import ConnectHandler
 #connection = default_infoblox_connection()
 
 host_list = [
-    {
-        "device_type": "cisco_ios",
-        "host": "sandbox-iosxr-1.cisco.com",
-        "username": "admin",
-        "password": "C1sco12345",
-    },
+    #{
+    #    "device_type": "cisco_ios",
+    #    "host": "sandbox-iosxr-1.cisco.com",
+    #    "username": "admin",
+    #    "password": "C1sco12345",
+    #},
 
     #{
     #    "device_type": "cisco_nxos",
